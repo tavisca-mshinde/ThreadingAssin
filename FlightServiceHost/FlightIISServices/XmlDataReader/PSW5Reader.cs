@@ -14,9 +14,10 @@ namespace FlightIISServices.XmlDataReader
         {
             XmlSerializer serializer = new XmlSerializer(typeof(Entity.Threadworldspan.PSW5));
 
-            string path = @"D:\threadingAssignment\FlightServiceHost\FlightIISServices\Data\worldspan.xml";
-
+            //string path = @"D:\threadingAssignment\FlightServiceHost\FlightIISServices\Data\worldspan.xml";
+            //string path = @"Data/worldspan.xml";
             //FileStream fs = new FileStream(s, FileMode.Open);
+            var path = System.Web.Hosting.HostingEnvironment.MapPath("~/Data/worldspan.xml");
 
             //XmlReader reader = XmlReader.Create(fs);
             StreamReader reader = new StreamReader(path);

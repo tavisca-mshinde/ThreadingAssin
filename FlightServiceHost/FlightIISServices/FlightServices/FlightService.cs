@@ -17,10 +17,10 @@ namespace FlightIISServices.FlightServices
         //string s= HttpContext.Current.Server.MapPath(@"/Data/Flights.xml");
         //string FlightXMLPath = HttpContext.Current.Server.MapPath(@"/Data/Flights.xml");          
         //string BookingDetailsXMLPath = HttpContext.Current.Server.MapPath(@"\Data\BookingDetails.xml");
-       // string cardDetailsxmlPath = HttpContext.Current.Server.MapPath(@"\Data\Cards.xml");
+        string cardDetailsxmlPath = HttpContext.Current.Server.MapPath(@"\Data\Cards.xml");
        // string FlightXMLPath = @"D:\FlightBookingSystem\FlightServiceHost\FlightIISServices\Data\Flights.xml";
-        string BookingDetailsXMLPath = @"D:\threadingAssignment\FlightServiceHost\FlightIISServices\Data\BookingDetails.xml";
-        string cardDetailsxmlPath= @"D:\threadingAssignment\FlightServiceHost\FlightIISServices\Data\Cards.xml";
+        //string BookingDetailsXMLPath = @"D:\threadingAssignment\FlightServiceHost\FlightIISServices\Data\BookingDetails.xml";
+        //string cardDetailsxmlPath= @"D:\threadingAssignment\FlightServiceHost\FlightIISServices\Data\Cards.xml";
         public Result GetFlightsBySourceDestinationTravellersAndClass(string source, string destination, string traveller, string flightClass)
         {
             Result result = new Result();
@@ -30,40 +30,62 @@ namespace FlightIISServices.FlightServices
                 {
                     throw new Exception("Enter valid number of travellers.Travellers number should be atleast 1");
                 }
-
+                
                 //List<Flight> flightList = new List<Flight>();
                 Task<List<Entity.Flight>> task1 = Task<List<Entity.Flight>>.Factory.StartNew(() =>
                 {
-                    //Thread.Sleep(2000);
+                    Random rnd = new Random();
+                    int no = rnd.Next(1, 10);
+                    //Task.Delay(600000);
+                    Thread.Sleep(no * 1000);
+                    Console.WriteLine(no);
                     return GetEnvelope(source, destination);
                 });
 
+
                 Task<List<Entity.Flight>> task2 = Task<List<Entity.Flight>>.Factory.StartNew(() =>
                 {
+                    Random rnd = new Random();
+                    int no = rnd.Next(1, 10);
+                    //Task.Delay(600000);
+                    Thread.Sleep(no * 1000);
+                    Console.WriteLine(no);
                     return GetOTA_AirLowFareSearchRS(source, destination);
                 });
 
 
                 Task<List<Entity.Flight>> task3 = Task<List<Entity.Flight>>.Factory.StartNew(() =>
                 {
+                    Random rnd = new Random();
+                    int no = rnd.Next(1, 10);
+                    //Task.Delay(60000000);
+                    Thread.Sleep(no*1000);
+                    Console.WriteLine(no);
                     return GetPSW5(source, destination);
                 });
-
+                //Result r1 = Task.Run(()=> {return GetPSW5(source, destination);});
 
 
 
                 var taskList = new List<Task<List<Entity.Flight>>> { task1, task2, task3 };
 
-                Task.WaitAll(taskList.ToArray(),30000);
+                Task.WaitAll(taskList.ToArray(),5000);
 
 
                 List<Flight> flightList = new List<Flight>();
-                if (task1.Result != null)
-                    flightList.AddRange(task1.Result);
-                if (task2.Result != null)
-                    flightList.AddRange(task2.Result);
-                if (task3.Result != null)
-                    flightList.AddRange(task3.Result);
+                foreach(var task in taskList)
+                {
+                    if(task.IsCompleted && !task.IsFaulted)
+                        flightList.AddRange(task.Result);
+                }
+
+                //Task.WaitAll(taskList.ToArray(), 5000);
+                //if (task1.Result != null)
+                //    flightList.AddRange(task1.Result);
+                //if (task2.Result != null)
+                //    flightList.AddRange(task2.Result);
+                //if (task3.Result != null)
+                //    flightList.AddRange(task3.Result);
                 if (flightList.Count()==0)
                     throw new Exception("No result found.");
                     //XDocument doc = XDocument.Load(FlightXMLPath);
@@ -122,6 +144,7 @@ namespace FlightIISServices.FlightServices
 
         public string AddNewBooking(Flight flight, Customer customer,int travellers)
         {
+            string BookingDetailsXMLPath = HttpContext.Current.Server.MapPath(@"\Data\BookingDetails.xml");
             XmlDocument xDoc = new XmlDocument();
             xDoc.Load(BookingDetailsXMLPath);
             XmlNode Booking = xDoc.CreateElement("Booking");
@@ -229,6 +252,7 @@ namespace FlightIISServices.FlightServices
 
         public string CancelBooking(string bookindId)
         {
+            string BookingDetailsXMLPath = HttpContext.Current.Server.MapPath(@"\Data\BookingDetails.xml");
             XDocument doc = XDocument.Load(BookingDetailsXMLPath);
             var a = doc.Descendants("Booking").First(x=>x.Element("BookingId").Value.Equals(bookindId));
             a.Element("BookingStatus").Value = "Cancelled";
@@ -238,6 +262,7 @@ namespace FlightIISServices.FlightServices
 
         public Result SaveCardDetails(Result result, Card card)
         {
+            string cardDetailsxmlPath = HttpContext.Current.Server.MapPath(@"\Data\Cards.xml");
             try
             {
                 if (!Validations.Validator.ValidateCardNumber(card.CardNumber))

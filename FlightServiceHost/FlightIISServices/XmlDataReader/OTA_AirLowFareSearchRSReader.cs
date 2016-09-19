@@ -14,8 +14,9 @@ namespace FlightIISServices.XmlDataReader
         {
             XmlSerializer serializer = new XmlSerializer(typeof(Entity.ThreadMystifly.OTA_AirLowFareSearchRS));
 
-            string path = @"D:\threadingAssignment\FlightServiceHost\FlightIISServices\Data\mystifly.xml";
-
+            //string path = @"D:\threadingAssignment\FlightServiceHost\FlightIISServices\Data\mystifly.xml";
+            //string path = @"Data/mystifly.xml";
+            var path = System.Web.Hosting.HostingEnvironment.MapPath("~/Data/mystifly.xml");
             // FileStream fileStream = new FileStream(path, FileMode.Open);
 
             //XmlReader reader = XmlReader.Create(fileStream);

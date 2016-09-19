@@ -12,6 +12,7 @@ namespace FlightServiceClientConsole
     {
         static void Main(string[] args)
         {
+            Console.Title= "Welcome to TravelVista";
             Console.WriteLine("Welcome to TravelVista");
             Result result = new Result();
             string traveller="1";
@@ -31,6 +32,7 @@ namespace FlightServiceClientConsole
                         {
                             Console.WriteLine("Please enter source location");
                             string source = Console.ReadLine();
+
                             Console.WriteLine("Please enter destination location");
                             string destination = Console.ReadLine();
                             Console.WriteLine("Please enter number of travellers");
@@ -75,7 +77,12 @@ namespace FlightServiceClientConsole
                                 Console.WriteLine(result.Message);
                                 flagForNoData = true;
                             }
-                        } while (flagForNoData);
+
+
+
+                        } while (true);//flagForNoData
+
+
                         Result filteredResult = new Result();
                         filteredResult = result;
                         Console.WriteLine("Do you want to apply filter (y|n)");
@@ -208,6 +215,7 @@ namespace FlightServiceClientConsole
                     flight.FlightId, flight.AirlineName, flight.Source, flight.Destination, flight.Price, flight.AvailableSeat, flight.DepartureTime, flight.ArrivalTime,flight.Rating);
                 Console.WriteLine();
             }
+            Console.WriteLine(result.FlightList.Count());
         }
     }
   
