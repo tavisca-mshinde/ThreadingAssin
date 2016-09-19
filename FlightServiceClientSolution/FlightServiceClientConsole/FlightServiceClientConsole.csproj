@@ -50,7 +50,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\ClientRef\Reference.cs">
+    <Compile Include="Service References\ClientServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -59,17 +59,17 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="FlightServiceClientConsole.ruleset" />
-    <None Include="Service References\ClientRef\FlightService.wsdl" />
-    <None Include="Service References\ClientRef\FlightServiceClientConsole.ClientRef.Result.datasource">
+    <None Include="Service References\ClientServiceReference\FlightService.wsdl" />
+    <None Include="Service References\ClientServiceReference\FlightServiceClientConsole.ClientServiceReference.Result.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ClientRef\Service1.xsd">
+    <None Include="Service References\ClientServiceReference\Service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ClientRef\Service11.xsd">
+    <None Include="Service References\ClientServiceReference\Service11.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ClientRef\Service12.xsd">
+    <None Include="Service References\ClientServiceReference\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -77,19 +77,19 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ClientRef\" />
+    <WCFMetadataStorage Include="Service References\ClientServiceReference\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ClientRef\Service1.disco" />
+    <None Include="Service References\ClientServiceReference\Service1.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ClientRef\configuration91.svcinfo" />
+    <None Include="Service References\ClientServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ClientRef\configuration.svcinfo" />
+    <None Include="Service References\ClientServiceReference\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ClientRef\Reference.svcmap">
+    <None Include="Service References\ClientServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

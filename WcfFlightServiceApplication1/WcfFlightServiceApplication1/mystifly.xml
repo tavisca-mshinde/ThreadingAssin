@@ -1,0 +1,1016 @@
+<OTA_AirLowFareSearchRS xmlns="http://www.opentravel.org/OTA/2003/05" Version="1.0.3">
+	<Success />
+	<PricedItineraries>
+		<PricedItinerary SequenceNumber="1">
+			<IsCardPay>false</IsCardPay>
+			<AirItineraryInfo DirectionInd="Return">
+				<OriginDestinationOptions>
+					<OriginDestinationOption>
+						<FlightSegment DepartureDateTime="2015-01-03T09:30:00" ArrivalDateTime="2015-01-03T10:35:00" StopQuantity="0" FlightNumber="2453" ResBookDesigCode="K" JourneyDuration="65">
+							<DepartureAirport LocationCode="KUL" />
+							<ArrivalAirport LocationCode="SIN" />
+							<OperatingAirline Code="TR" FlightNumber="2453" />
+							<Equipment AirEquipType="" />
+							<MarketingAirline Code="TR" />
+							<MarriageGrp />
+							<TPA_Extensions>
+								<eTicket Ind="True" />
+								<CabinClass CabinTypeCode="" />
+								<Meal Code="" />
+								<SeatsRemaining Number="0" BelowMin="False" />
+							</TPA_Extensions>
+						</FlightSegment>
+					</OriginDestinationOption>
+					<OriginDestinationOption>
+						<FlightSegment DepartureDateTime="2015-01-05T15:15:00" ArrivalDateTime="2015-01-05T16:20:00" StopQuantity="0" FlightNumber="2458" ResBookDesigCode="P" JourneyDuration="65">
+							<DepartureAirport LocationCode="SIN" />
+							<ArrivalAirport LocationCode="KUL" />
+							<OperatingAirline Code="TR" FlightNumber="2458" />
+							<Equipment AirEquipType="" />
+							<MarketingAirline Code="TR" />
+							<MarriageGrp />
+							<TPA_Extensions>
+								<eTicket Ind="True" />
+								<CabinClass CabinTypeCode="" />
+								<Meal Code="" />
+								<SeatsRemaining Number="0" BelowMin="False" />
+							</TPA_Extensions>
+						</FlightSegment>
+					</OriginDestinationOption>
+				</OriginDestinationOptions>
+			</AirItineraryInfo>
+			<AirItineraryPricingInfo FareSourceCode="ODAwMDAyJkZSJkZSJjdjZjgxYzIwLTk5YjAtNDUyNi04Y2EwLWM5ODIwYzc5OWQwYyZGUg==">
+				<ItinTotalFare>
+					<BaseFare Amount="218.38" CurrencyCode="MYR" DecimalPlaces="2" />
+					<EquivFare Amount="63.19" CurrencyCode="USD" DecimalPlaces="2" />
+					<TotalTax Amount="69.06" CurrencyCode="USD" DecimalPlaces="2" />
+					<TotalFare Amount="132.26" CurrencyCode="USD" DecimalPlaces="2" />
+				</ItinTotalFare>
+				<PTC_FareBreakdowns>
+					<PTC_FareBreakdown>
+						<PassengerTypeQuantity Code="ADT" Quantity="2" />
+						<FareBasisCodes>
+							<FareBasisCode>ATR2453K</FareBasisCode>
+							<FareBasisCode>ATR2458P</FareBasisCode>
+						</FareBasisCodes>
+						<PassengerFare>
+							<BaseFare Amount="95.63" CurrencyCode="MYR" DecimalPlaces="2" />
+							<EquivFare Amount="27.67" CurrencyCode="USD" DecimalPlaces="2" />
+							<Taxes>
+								<Tax Amount="34.53" CurrencyCode="USD" TaxCode="MISCTAX" DecimalPlaces="2" />
+							</Taxes>
+							<TotalFare Amount="62.20" CurrencyCode="USD" DecimalPlaces="2" />
+							<TPA_Extensions />
+						</PassengerFare>
+					</PTC_FareBreakdown>
+					<PTC_FareBreakdown>
+						<PassengerTypeQuantity Code="INF" Quantity="1" />
+						<FareBasisCodes>
+							<FareBasisCode>ITR2453K</FareBasisCode>
+							<FareBasisCode>ITR2458P</FareBasisCode>
+						</FareBasisCodes>
+						<PassengerFare>
+							<BaseFare Amount="27.12" CurrencyCode="MYR" DecimalPlaces="2" />
+							<EquivFare Amount="7.85" CurrencyCode="USD" DecimalPlaces="2" />
+							<Taxes>
+								<Tax Amount="0.00" CurrencyCode="USD" TaxCode="MISCTAX" DecimalPlaces="2" />
+							</Taxes>
+							<TotalFare Amount="7.85" CurrencyCode="USD" DecimalPlaces="2" />
+							<TPA_Extensions />
+						</PassengerFare>
+					</PTC_FareBreakdown>
+				</PTC_FareBreakdowns>
+				<FareInfos>
+					<FareInfo>
+						<FareReference>K</FareReference>
+					</FareInfo>
+					<FareInfo>
+						<FareReference>P</FareReference>
+					</FareInfo>
+				</FareInfos>
+				<FareType>WebFare</FareType>
+				<TPA_Extensions>
+					<DivideInParty Indicator="false" />
+				</TPA_Extensions>
+			</AirItineraryPricingInfo>
+			<TicketingInfo TicketType="eTicket" />
+			<TPA_Extensions>
+				<ValidatingAirline Code="TR" />
+				<Passport Ind="True" />
+				<RequiredFieldsToBook>
+					<Item Value="Passport" />
+				</RequiredFieldsToBook>
+			</TPA_Extensions>
+		</PricedItinerary>
+		<PricedItinerary SequenceNumber="2">
+			<IsCardPay>false</IsCardPay>
+			<AirItineraryInfo DirectionInd="Return">
+				<OriginDestinationOptions>
+					<OriginDestinationOption>
+						<FlightSegment DepartureDateTime="2015-01-03T09:30:00" ArrivalDateTime="2015-01-03T10:35:00" StopQuantity="0" FlightNumber="2453" ResBookDesigCode="K" JourneyDuration="65">
+							<DepartureAirport LocationCode="KUL" />
+							<ArrivalAirport LocationCode="SIN" />
+							<OperatingAirline Code="TR" FlightNumber="2453" />
+							<Equipment AirEquipType="" />
+							<MarketingAirline Code="TR" />
+							<MarriageGrp />
+							<TPA_Extensions>
+								<eTicket Ind="True" />
+								<CabinClass CabinTypeCode="" />
+								<Meal Code="" />
+								<SeatsRemaining Number="0" BelowMin="False" />
+							</TPA_Extensions>
+						</FlightSegment>
+					</OriginDestinationOption>
+					<OriginDestinationOption>
+						<FlightSegment DepartureDateTime="2015-01-05T17:10:00" ArrivalDateTime="2015-01-05T18:20:00" StopQuantity="0" FlightNumber="2464" ResBookDesigCode="P" JourneyDuration="70">
+							<DepartureAirport LocationCode="SIN" />
+							<ArrivalAirport LocationCode="KUL" />
+							<OperatingAirline Code="TR" FlightNumber="2464" />
+							<Equipment AirEquipType="" />
+							<MarketingAirline Code="TR" />
+							<MarriageGrp />
+							<TPA_Extensions>
+								<eTicket Ind="True" />
+								<CabinClass CabinTypeCode="" />
+								<Meal Code="" />
+								<SeatsRemaining Number="0" BelowMin="False" />
+							</TPA_Extensions>
+						</FlightSegment>
+					</OriginDestinationOption>
+				</OriginDestinationOptions>
+			</AirItineraryInfo>
+			<AirItineraryPricingInfo FareSourceCode="ODAwMDAzJkZSJkZSJjdjZjgxYzIwLTk5YjAtNDUyNi04Y2EwLWM5ODIwYzc5OWQwYyZGUg==">
+				<ItinTotalFare>
+					<BaseFare Amount="218.38" CurrencyCode="MYR" DecimalPlaces="2" />
+					<EquivFare Amount="63.19" CurrencyCode="USD" DecimalPlaces="2" />
+					<TotalTax Amount="69.06" CurrencyCode="USD" DecimalPlaces="2" />
+					<TotalFare Amount="132.26" CurrencyCode="USD" DecimalPlaces="2" />
+				</ItinTotalFare>
+				<PTC_FareBreakdowns>
+					<PTC_FareBreakdown>
+						<PassengerTypeQuantity Code="ADT" Quantity="2" />
+						<FareBasisCodes>
+							<FareBasisCode>ATR2453K</FareBasisCode>
+							<FareBasisCode>ATR2464P</FareBasisCode>
+						</FareBasisCodes>
+						<PassengerFare>
+							<BaseFare Amount="95.63" CurrencyCode="MYR" DecimalPlaces="2" />
+							<EquivFare Amount="27.67" CurrencyCode="USD" DecimalPlaces="2" />
+							<Taxes>
+								<Tax Amount="34.53" CurrencyCode="USD" TaxCode="MISCTAX" DecimalPlaces="2" />
+							</Taxes>
+							<TotalFare Amount="62.20" CurrencyCode="USD" DecimalPlaces="2" />
+							<TPA_Extensions />
+						</PassengerFare>
+					</PTC_FareBreakdown>
+					<PTC_FareBreakdown>
+						<PassengerTypeQuantity Code="INF" Quantity="1" />
+						<FareBasisCodes>
+							<FareBasisCode>ITR2453K</FareBasisCode>
+							<FareBasisCode>ITR2464P</FareBasisCode>
+						</FareBasisCodes>
+						<PassengerFare>
+							<BaseFare Amount="27.12" CurrencyCode="MYR" DecimalPlaces="2" />
+							<EquivFare Amount="7.85" CurrencyCode="USD" DecimalPlaces="2" />
+							<Taxes>
+								<Tax Amount="0.00" CurrencyCode="USD" TaxCode="MISCTAX" DecimalPlaces="2" />
+							</Taxes>
+							<TotalFare Amount="7.85" CurrencyCode="USD" DecimalPlaces="2" />
+							<TPA_Extensions />
+						</PassengerFare>
+					</PTC_FareBreakdown>
+				</PTC_FareBreakdowns>
+				<FareInfos>
+					<FareInfo>
+						<FareReference>K</FareReference>
+					</FareInfo>
+					<FareInfo>
+						<FareReference>P</FareReference>
+					</FareInfo>
+				</FareInfos>
+				<FareType>WebFare</FareType>
+				<TPA_Extensions>
+					<DivideInParty Indicator="false" />
+				</TPA_Extensions>
+			</AirItineraryPricingInfo>
+			<TicketingInfo TicketType="eTicket" />
+			<TPA_Extensions>
+				<ValidatingAirline Code="TR" />
+				<Passport Ind="True" />
+				<RequiredFieldsToBook>
+					<Item Value="Passport" />
+				</RequiredFieldsToBook>
+			</TPA_Extensions>
+		</PricedItinerary>
+		<PricedItinerary SequenceNumber="3">
+			<IsCardPay>false</IsCardPay>
+			<AirItineraryInfo DirectionInd="Return">
+				<OriginDestinationOptions>
+					<OriginDestinationOption>
+						<FlightSegment DepartureDateTime="2015-01-03T09:30:00" ArrivalDateTime="2015-01-03T10:35:00" StopQuantity="0" FlightNumber="2453" ResBookDesigCode="K" JourneyDuration="65">
+							<DepartureAirport LocationCode="KUL" />
+							<ArrivalAirport LocationCode="SIN" />
+							<OperatingAirline Code="TR" FlightNumber="2453" />
+							<Equipment AirEquipType="" />
+							<MarketingAirline Code="TR" />
+							<MarriageGrp />
+							<TPA_Extensions>
+								<eTicket Ind="True" />
+								<CabinClass CabinTypeCode="" />
+								<Meal Code="" />
+								<SeatsRemaining Number="0" BelowMin="False" />
+							</TPA_Extensions>
+						</FlightSegment>
+					</OriginDestinationOption>
+					<OriginDestinationOption>
+						<FlightSegment DepartureDateTime="2015-01-05T07:45:00" ArrivalDateTime="2015-01-05T08:55:00" StopQuantity="0" FlightNumber="2452" ResBookDesigCode="P" JourneyDuration="70">
+							<DepartureAirport LocationCode="SIN" />
+							<ArrivalAirport LocationCode="KUL" />
+							<OperatingAirline Code="TR" FlightNumber="2452" />
+							<Equipment AirEquipType="" />
+							<MarketingAirline Code="TR" />
+							<MarriageGrp />
+							<TPA_Extensions>
+								<eTicket Ind="True" />
+								<CabinClass CabinTypeCode="" />
+								<Meal Code="" />
+								<SeatsRemaining Number="0" BelowMin="False" />
+							</TPA_Extensions>
+						</FlightSegment>
+					</OriginDestinationOption>
+				</OriginDestinationOptions>
+			</AirItineraryInfo>
+			<AirItineraryPricingInfo FareSourceCode="ODAwMDAwJkZSJkZSJjdjZjgxYzIwLTk5YjAtNDUyNi04Y2EwLWM5ODIwYzc5OWQwYyZGUg==">
+				<ItinTotalFare>
+					<BaseFare Amount="218.38" CurrencyCode="MYR" DecimalPlaces="2" />
+					<EquivFare Amount="63.19" CurrencyCode="USD" DecimalPlaces="2" />
+					<TotalTax Amount="69.06" CurrencyCode="USD" DecimalPlaces="2" />
+					<TotalFare Amount="132.26" CurrencyCode="USD" DecimalPlaces="2" />
+				</ItinTotalFare>
+				<PTC_FareBreakdowns>
+					<PTC_FareBreakdown>
+						<PassengerTypeQuantity Code="ADT" Quantity="2" />
+						<FareBasisCodes>
+							<FareBasisCode>ATR2453K</FareBasisCode>
+							<FareBasisCode>ATR2452P</FareBasisCode>
+						</FareBasisCodes>
+						<PassengerFare>
+							<BaseFare Amount="95.63" CurrencyCode="MYR" DecimalPlaces="2" />
+							<EquivFare Amount="27.67" CurrencyCode="USD" DecimalPlaces="2" />
+							<Taxes>
+								<Tax Amount="34.53" CurrencyCode="USD" TaxCode="MISCTAX" DecimalPlaces="2" />
+							</Taxes>
+							<TotalFare Amount="62.20" CurrencyCode="USD" DecimalPlaces="2" />
+							<TPA_Extensions />
+						</PassengerFare>
+					</PTC_FareBreakdown>
+					<PTC_FareBreakdown>
+						<PassengerTypeQuantity Code="INF" Quantity="1" />
+						<FareBasisCodes>
+							<FareBasisCode>ITR2453K</FareBasisCode>
+							<FareBasisCode>ITR2452P</FareBasisCode>
+						</FareBasisCodes>
+						<PassengerFare>
+							<BaseFare Amount="27.12" CurrencyCode="MYR" DecimalPlaces="2" />
+							<EquivFare Amount="7.85" CurrencyCode="USD" DecimalPlaces="2" />
+							<Taxes>
+								<Tax Amount="0.00" CurrencyCode="USD" TaxCode="MISCTAX" DecimalPlaces="2" />
+							</Taxes>
+							<TotalFare Amount="7.85" CurrencyCode="USD" DecimalPlaces="2" />
+							<TPA_Extensions />
+						</PassengerFare>
+					</PTC_FareBreakdown>
+				</PTC_FareBreakdowns>
+				<FareInfos>
+					<FareInfo>
+						<FareReference>K</FareReference>
+					</FareInfo>
+					<FareInfo>
+						<FareReference>P</FareReference>
+					</FareInfo>
+				</FareInfos>
+				<FareType>WebFare</FareType>
+				<TPA_Extensions>
+					<DivideInParty Indicator="false" />
+				</TPA_Extensions>
+			</AirItineraryPricingInfo>
+			<TicketingInfo TicketType="eTicket" />
+			<TPA_Extensions>
+				<ValidatingAirline Code="TR" />
+				<Passport Ind="True" />
+				<RequiredFieldsToBook>
+					<Item Value="Passport" />
+				</RequiredFieldsToBook>
+			</TPA_Extensions>
+		</PricedItinerary>
+		<PricedItinerary SequenceNumber="4">
+			<IsCardPay>false</IsCardPay>
+			<AirItineraryInfo DirectionInd="Return">
+				<OriginDestinationOptions>
+					<OriginDestinationOption>
+						<FlightSegment DepartureDateTime="2015-01-03T09:30:00" ArrivalDateTime="2015-01-03T10:35:00" StopQuantity="0" FlightNumber="2453" ResBookDesigCode="K" JourneyDuration="65">
+							<DepartureAirport LocationCode="KUL" />
+							<ArrivalAirport LocationCode="SIN" />
+							<OperatingAirline Code="TR" FlightNumber="2453" />
+							<Equipment AirEquipType="" />
+							<MarketingAirline Code="TR" />
+							<MarriageGrp />
+							<TPA_Extensions>
+								<eTicket Ind="True" />
+								<CabinClass CabinTypeCode="" />
+								<Meal Code="" />
+								<SeatsRemaining Number="0" BelowMin="False" />
+							</TPA_Extensions>
+						</FlightSegment>
+					</OriginDestinationOption>
+					<OriginDestinationOption>
+						<FlightSegment DepartureDateTime="2015-01-05T10:20:00" ArrivalDateTime="2015-01-05T11:25:00" StopQuantity="0" FlightNumber="2456" ResBookDesigCode="P" JourneyDuration="65">
+							<DepartureAirport LocationCode="SIN" />
+							<ArrivalAirport LocationCode="KUL" />
+							<OperatingAirline Code="TR" FlightNumber="2456" />
+							<Equipment AirEquipType="" />
+							<MarketingAirline Code="TR" />
+							<MarriageGrp />
+							<TPA_Extensions>
+								<eTicket Ind="True" />
+								<CabinClass CabinTypeCode="" />
+								<Meal Code="" />
+								<SeatsRemaining Number="0" BelowMin="False" />
+							</TPA_Extensions>
+						</FlightSegment>
+					</OriginDestinationOption>
+				</OriginDestinationOptions>
+			</AirItineraryInfo>
+			<AirItineraryPricingInfo FareSourceCode="ODAwMDAxJkZSJkZSJjdjZjgxYzIwLTk5YjAtNDUyNi04Y2EwLWM5ODIwYzc5OWQwYyZGUg==">
+				<ItinTotalFare>
+					<BaseFare Amount="218.38" CurrencyCode="MYR" DecimalPlaces="2" />
+					<EquivFare Amount="63.19" CurrencyCode="USD" DecimalPlaces="2" />
+					<TotalTax Amount="69.06" CurrencyCode="USD" DecimalPlaces="2" />
+					<TotalFare Amount="132.26" CurrencyCode="USD" DecimalPlaces="2" />
+				</ItinTotalFare>
+				<PTC_FareBreakdowns>
+					<PTC_FareBreakdown>
+						<PassengerTypeQuantity Code="ADT" Quantity="2" />
+						<FareBasisCodes>
+							<FareBasisCode>ATR2453K</FareBasisCode>
+							<FareBasisCode>ATR2456P</FareBasisCode>
+						</FareBasisCodes>
+						<PassengerFare>
+							<BaseFare Amount="95.63" CurrencyCode="MYR" DecimalPlaces="2" />
+							<EquivFare Amount="27.67" CurrencyCode="USD" DecimalPlaces="2" />
+							<Taxes>
+								<Tax Amount="34.53" CurrencyCode="USD" TaxCode="MISCTAX" DecimalPlaces="2" />
+							</Taxes>
+							<TotalFare Amount="62.20" CurrencyCode="USD" DecimalPlaces="2" />
+							<TPA_Extensions />
+						</PassengerFare>
+					</PTC_FareBreakdown>
+					<PTC_FareBreakdown>
+						<PassengerTypeQuantity Code="INF" Quantity="1" />
+						<FareBasisCodes>
+							<FareBasisCode>ITR2453K</FareBasisCode>
+							<FareBasisCode>ITR2456P</FareBasisCode>
+						</FareBasisCodes>
+						<PassengerFare>
+							<BaseFare Amount="27.12" CurrencyCode="MYR" DecimalPlaces="2" />
+							<EquivFare Amount="7.85" CurrencyCode="USD" DecimalPlaces="2" />
+							<Taxes>
+								<Tax Amount="0.00" CurrencyCode="USD" TaxCode="MISCTAX" DecimalPlaces="2" />
+							</Taxes>
+							<TotalFare Amount="7.85" CurrencyCode="USD" DecimalPlaces="2" />
+							<TPA_Extensions />
+						</PassengerFare>
+					</PTC_FareBreakdown>
+				</PTC_FareBreakdowns>
+				<FareInfos>
+					<FareInfo>
+						<FareReference>K</FareReference>
+					</FareInfo>
+					<FareInfo>
+						<FareReference>P</FareReference>
+					</FareInfo>
+				</FareInfos>
+				<FareType>WebFare</FareType>
+				<TPA_Extensions>
+					<DivideInParty Indicator="false" />
+				</TPA_Extensions>
+			</AirItineraryPricingInfo>
+			<TicketingInfo TicketType="eTicket" />
+			<TPA_Extensions>
+				<ValidatingAirline Code="TR" />
+				<Passport Ind="True" />
+				<RequiredFieldsToBook>
+					<Item Value="Passport" />
+				</RequiredFieldsToBook>
+			</TPA_Extensions>
+		</PricedItinerary>
+		<PricedItinerary SequenceNumber="5">
+			<IsCardPay>false</IsCardPay>
+			<AirItineraryInfo DirectionInd="Return">
+				<OriginDestinationOptions>
+					<OriginDestinationOption>
+						<FlightSegment DepartureDateTime="2015-01-03T12:10:00" ArrivalDateTime="2015-01-03T13:10:00" StopQuantity="0" FlightNumber="2457" ResBookDesigCode="J" JourneyDuration="60">
+							<DepartureAirport LocationCode="KUL" />
+							<ArrivalAirport LocationCode="SIN" />
+							<OperatingAirline Code="TR" FlightNumber="2457" />
+							<Equipment AirEquipType="" />
+							<MarketingAirline Code="TR" />
+							<MarriageGrp />
+							<TPA_Extensions>
+								<eTicket Ind="True" />
+								<CabinClass CabinTypeCode="" />
+								<Meal Code="" />
+								<SeatsRemaining Number="0" BelowMin="False" />
+							</TPA_Extensions>
+						</FlightSegment>
+					</OriginDestinationOption>
+					<OriginDestinationOption>
+						<FlightSegment DepartureDateTime="2015-01-05T07:45:00" ArrivalDateTime="2015-01-05T08:55:00" StopQuantity="0" FlightNumber="2452" ResBookDesigCode="P" JourneyDuration="70">
+							<DepartureAirport LocationCode="SIN" />
+							<ArrivalAirport LocationCode="KUL" />
+							<OperatingAirline Code="TR" FlightNumber="2452" />
+							<Equipment AirEquipType="" />
+							<MarketingAirline Code="TR" />
+							<MarriageGrp />
+							<TPA_Extensions>
+								<eTicket Ind="True" />
+								<CabinClass CabinTypeCode="" />
+								<Meal Code="" />
+								<SeatsRemaining Number="0" BelowMin="False" />
+							</TPA_Extensions>
+						</FlightSegment>
+					</OriginDestinationOption>
+				</OriginDestinationOptions>
+			</AirItineraryInfo>
+			<AirItineraryPricingInfo FareSourceCode="ODAwMDA0JkZSJkZSJjdjZjgxYzIwLTk5YjAtNDUyNi04Y2EwLWM5ODIwYzc5OWQwYyZGUg==">
+				<ItinTotalFare>
+					<BaseFare Amount="263.73" CurrencyCode="MYR" DecimalPlaces="2" />
+					<EquivFare Amount="76.31" CurrencyCode="USD" DecimalPlaces="2" />
+					<TotalTax Amount="69.06" CurrencyCode="USD" DecimalPlaces="2" />
+					<TotalFare Amount="145.38" CurrencyCode="USD" DecimalPlaces="2" />
+				</ItinTotalFare>
+				<PTC_FareBreakdowns>
+					<PTC_FareBreakdown>
+						<PassengerTypeQuantity Code="ADT" Quantity="2" />
+						<FareBasisCodes>
+							<FareBasisCode>ATR2457J</FareBasisCode>
+							<FareBasisCode>ATR2452P</FareBasisCode>
+						</FareBasisCodes>
+						<PassengerFare>
+							<BaseFare Amount="118.30" CurrencyCode="MYR" DecimalPlaces="2" />
+							<EquivFare Amount="34.23" CurrencyCode="USD" DecimalPlaces="2" />
+							<Taxes>
+								<Tax Amount="34.53" CurrencyCode="USD" TaxCode="MISCTAX" DecimalPlaces="2" />
+							</Taxes>
+							<TotalFare Amount="68.76" CurrencyCode="USD" DecimalPlaces="2" />
+							<TPA_Extensions />
+						</PassengerFare>
+					</PTC_FareBreakdown>
+					<PTC_FareBreakdown>
+						<PassengerTypeQuantity Code="INF" Quantity="1" />
+						<FareBasisCodes>
+							<FareBasisCode>ITR2457J</FareBasisCode>
+							<FareBasisCode>ITR2452P</FareBasisCode>
+						</FareBasisCodes>
+						<PassengerFare>
+							<BaseFare Amount="27.12" CurrencyCode="MYR" DecimalPlaces="2" />
+							<EquivFare Amount="7.85" CurrencyCode="USD" DecimalPlaces="2" />
+							<Taxes>
+								<Tax Amount="0.00" CurrencyCode="USD" TaxCode="MISCTAX" DecimalPlaces="2" />
+							</Taxes>
+							<TotalFare Amount="7.85" CurrencyCode="USD" DecimalPlaces="2" />
+							<TPA_Extensions />
+						</PassengerFare>
+					</PTC_FareBreakdown>
+				</PTC_FareBreakdowns>
+				<FareInfos>
+					<FareInfo>
+						<FareReference>J</FareReference>
+					</FareInfo>
+					<FareInfo>
+						<FareReference>P</FareReference>
+					</FareInfo>
+				</FareInfos>
+				<FareType>WebFare</FareType>
+				<TPA_Extensions>
+					<DivideInParty Indicator="false" />
+				</TPA_Extensions>
+			</AirItineraryPricingInfo>
+			<TicketingInfo TicketType="eTicket" />
+			<TPA_Extensions>
+				<ValidatingAirline Code="TR" />
+				<Passport Ind="True" />
+				<RequiredFieldsToBook>
+					<Item Value="Passport" />
+				</RequiredFieldsToBook>
+			</TPA_Extensions>
+		</PricedItinerary>
+		<PricedItinerary SequenceNumber="6">
+			<IsCardPay>false</IsCardPay>
+			<AirItineraryInfo DirectionInd="Return">
+				<OriginDestinationOptions>
+					<OriginDestinationOption>
+						<FlightSegment DepartureDateTime="2015-01-03T12:10:00" ArrivalDateTime="2015-01-03T13:10:00" StopQuantity="0" FlightNumber="2457" ResBookDesigCode="J" JourneyDuration="60">
+							<DepartureAirport LocationCode="KUL" />
+							<ArrivalAirport LocationCode="SIN" />
+							<OperatingAirline Code="TR" FlightNumber="2457" />
+							<Equipment AirEquipType="" />
+							<MarketingAirline Code="TR" />
+							<MarriageGrp />
+							<TPA_Extensions>
+								<eTicket Ind="True" />
+								<CabinClass CabinTypeCode="" />
+								<Meal Code="" />
+								<SeatsRemaining Number="0" BelowMin="False" />
+							</TPA_Extensions>
+						</FlightSegment>
+					</OriginDestinationOption>
+					<OriginDestinationOption>
+						<FlightSegment DepartureDateTime="2015-01-05T17:10:00" ArrivalDateTime="2015-01-05T18:20:00" StopQuantity="0" FlightNumber="2464" ResBookDesigCode="P" JourneyDuration="70">
+							<DepartureAirport LocationCode="SIN" />
+							<ArrivalAirport LocationCode="KUL" />
+							<OperatingAirline Code="TR" FlightNumber="2464" />
+							<Equipment AirEquipType="" />
+							<MarketingAirline Code="TR" />
+							<MarriageGrp />
+							<TPA_Extensions>
+								<eTicket Ind="True" />
+								<CabinClass CabinTypeCode="" />
+								<Meal Code="" />
+								<SeatsRemaining Number="0" BelowMin="False" />
+							</TPA_Extensions>
+						</FlightSegment>
+					</OriginDestinationOption>
+				</OriginDestinationOptions>
+			</AirItineraryInfo>
+			<AirItineraryPricingInfo FareSourceCode="ODAwMDA3JkZSJkZSJjdjZjgxYzIwLTk5YjAtNDUyNi04Y2EwLWM5ODIwYzc5OWQwYyZGUg==">
+				<ItinTotalFare>
+					<BaseFare Amount="263.73" CurrencyCode="MYR" DecimalPlaces="2" />
+					<EquivFare Amount="76.31" CurrencyCode="USD" DecimalPlaces="2" />
+					<TotalTax Amount="69.06" CurrencyCode="USD" DecimalPlaces="2" />
+					<TotalFare Amount="145.38" CurrencyCode="USD" DecimalPlaces="2" />
+				</ItinTotalFare>
+				<PTC_FareBreakdowns>
+					<PTC_FareBreakdown>
+						<PassengerTypeQuantity Code="ADT" Quantity="2" />
+						<FareBasisCodes>
+							<FareBasisCode>ATR2457J</FareBasisCode>
+							<FareBasisCode>ATR2464P</FareBasisCode>
+						</FareBasisCodes>
+						<PassengerFare>
+							<BaseFare Amount="118.30" CurrencyCode="MYR" DecimalPlaces="2" />
+							<EquivFare Amount="34.23" CurrencyCode="USD" DecimalPlaces="2" />
+							<Taxes>
+								<Tax Amount="34.53" CurrencyCode="USD" TaxCode="MISCTAX" DecimalPlaces="2" />
+							</Taxes>
+							<TotalFare Amount="68.76" CurrencyCode="USD" DecimalPlaces="2" />
+							<TPA_Extensions />
+						</PassengerFare>
+					</PTC_FareBreakdown>
+					<PTC_FareBreakdown>
+						<PassengerTypeQuantity Code="INF" Quantity="1" />
+						<FareBasisCodes>
+							<FareBasisCode>ITR2457J</FareBasisCode>
+							<FareBasisCode>ITR2464P</FareBasisCode>
+						</FareBasisCodes>
+						<PassengerFare>
+							<BaseFare Amount="27.12" CurrencyCode="MYR" DecimalPlaces="2" />
+							<EquivFare Amount="7.85" CurrencyCode="USD" DecimalPlaces="2" />
+							<Taxes>
+								<Tax Amount="0.00" CurrencyCode="USD" TaxCode="MISCTAX" DecimalPlaces="2" />
+							</Taxes>
+							<TotalFare Amount="7.85" CurrencyCode="USD" DecimalPlaces="2" />
+							<TPA_Extensions />
+						</PassengerFare>
+					</PTC_FareBreakdown>
+				</PTC_FareBreakdowns>
+				<FareInfos>
+					<FareInfo>
+						<FareReference>J</FareReference>
+					</FareInfo>
+					<FareInfo>
+						<FareReference>P</FareReference>
+					</FareInfo>
+				</FareInfos>
+				<FareType>WebFare</FareType>
+				<TPA_Extensions>
+					<DivideInParty Indicator="false" />
+				</TPA_Extensions>
+			</AirItineraryPricingInfo>
+			<TicketingInfo TicketType="eTicket" />
+			<TPA_Extensions>
+				<ValidatingAirline Code="TR" />
+				<Passport Ind="True" />
+				<RequiredFieldsToBook>
+					<Item Value="Passport" />
+				</RequiredFieldsToBook>
+			</TPA_Extensions>
+		</PricedItinerary>
+		<PricedItinerary SequenceNumber="7">
+			<IsCardPay>false</IsCardPay>
+			<AirItineraryInfo DirectionInd="Return">
+				<OriginDestinationOptions>
+					<OriginDestinationOption>
+						<FlightSegment DepartureDateTime="2015-01-03T12:10:00" ArrivalDateTime="2015-01-03T13:10:00" StopQuantity="0" FlightNumber="2457" ResBookDesigCode="J" JourneyDuration="60">
+							<DepartureAirport LocationCode="KUL" />
+							<ArrivalAirport LocationCode="SIN" />
+							<OperatingAirline Code="TR" FlightNumber="2457" />
+							<Equipment AirEquipType="" />
+							<MarketingAirline Code="TR" />
+							<MarriageGrp />
+							<TPA_Extensions>
+								<eTicket Ind="True" />
+								<CabinClass CabinTypeCode="" />
+								<Meal Code="" />
+								<SeatsRemaining Number="0" BelowMin="False" />
+							</TPA_Extensions>
+						</FlightSegment>
+					</OriginDestinationOption>
+					<OriginDestinationOption>
+						<FlightSegment DepartureDateTime="2015-01-05T10:20:00" ArrivalDateTime="2015-01-05T11:25:00" StopQuantity="0" FlightNumber="2456" ResBookDesigCode="P" JourneyDuration="65">
+							<DepartureAirport LocationCode="SIN" />
+							<ArrivalAirport LocationCode="KUL" />
+							<OperatingAirline Code="TR" FlightNumber="2456" />
+							<Equipment AirEquipType="" />
+							<MarketingAirline Code="TR" />
+							<MarriageGrp />
+							<TPA_Extensions>
+								<eTicket Ind="True" />
+								<CabinClass CabinTypeCode="" />
+								<Meal Code="" />
+								<SeatsRemaining Number="0" BelowMin="False" />
+							</TPA_Extensions>
+						</FlightSegment>
+					</OriginDestinationOption>
+				</OriginDestinationOptions>
+			</AirItineraryInfo>
+			<AirItineraryPricingInfo FareSourceCode="ODAwMDA1JkZSJkZSJjdjZjgxYzIwLTk5YjAtNDUyNi04Y2EwLWM5ODIwYzc5OWQwYyZGUg==">
+				<ItinTotalFare>
+					<BaseFare Amount="263.73" CurrencyCode="MYR" DecimalPlaces="2" />
+					<EquivFare Amount="76.31" CurrencyCode="USD" DecimalPlaces="2" />
+					<TotalTax Amount="69.06" CurrencyCode="USD" DecimalPlaces="2" />
+					<TotalFare Amount="145.38" CurrencyCode="USD" DecimalPlaces="2" />
+				</ItinTotalFare>
+				<PTC_FareBreakdowns>
+					<PTC_FareBreakdown>
+						<PassengerTypeQuantity Code="ADT" Quantity="2" />
+						<FareBasisCodes>
+							<FareBasisCode>ATR2457J</FareBasisCode>
+							<FareBasisCode>ATR2456P</FareBasisCode>
+						</FareBasisCodes>
+						<PassengerFare>
+							<BaseFare Amount="118.30" CurrencyCode="MYR" DecimalPlaces="2" />
+							<EquivFare Amount="34.23" CurrencyCode="USD" DecimalPlaces="2" />
+							<Taxes>
+								<Tax Amount="34.53" CurrencyCode="USD" TaxCode="MISCTAX" DecimalPlaces="2" />
+							</Taxes>
+							<TotalFare Amount="68.76" CurrencyCode="USD" DecimalPlaces="2" />
+							<TPA_Extensions />
+						</PassengerFare>
+					</PTC_FareBreakdown>
+					<PTC_FareBreakdown>
+						<PassengerTypeQuantity Code="INF" Quantity="1" />
+						<FareBasisCodes>
+							<FareBasisCode>ITR2457J</FareBasisCode>
+							<FareBasisCode>ITR2456P</FareBasisCode>
+						</FareBasisCodes>
+						<PassengerFare>
+							<BaseFare Amount="27.12" CurrencyCode="MYR" DecimalPlaces="2" />
+							<EquivFare Amount="7.85" CurrencyCode="USD" DecimalPlaces="2" />
+							<Taxes>
+								<Tax Amount="0.00" CurrencyCode="USD" TaxCode="MISCTAX" DecimalPlaces="2" />
+							</Taxes>
+							<TotalFare Amount="7.85" CurrencyCode="USD" DecimalPlaces="2" />
+							<TPA_Extensions />
+						</PassengerFare>
+					</PTC_FareBreakdown>
+				</PTC_FareBreakdowns>
+				<FareInfos>
+					<FareInfo>
+						<FareReference>J</FareReference>
+					</FareInfo>
+					<FareInfo>
+						<FareReference>P</FareReference>
+					</FareInfo>
+				</FareInfos>
+				<FareType>WebFare</FareType>
+				<TPA_Extensions>
+					<DivideInParty Indicator="false" />
+				</TPA_Extensions>
+			</AirItineraryPricingInfo>
+			<TicketingInfo TicketType="eTicket" />
+			<TPA_Extensions>
+				<ValidatingAirline Code="TR" />
+				<Passport Ind="True" />
+				<RequiredFieldsToBook>
+					<Item Value="Passport" />
+				</RequiredFieldsToBook>
+			</TPA_Extensions>
+		</PricedItinerary>
+		<PricedItinerary SequenceNumber="8">
+			<IsCardPay>false</IsCardPay>
+			<AirItineraryInfo DirectionInd="Return">
+				<OriginDestinationOptions>
+					<OriginDestinationOption>
+						<FlightSegment DepartureDateTime="2015-01-03T12:10:00" ArrivalDateTime="2015-01-03T13:10:00" StopQuantity="0" FlightNumber="2457" ResBookDesigCode="J" JourneyDuration="60">
+							<DepartureAirport LocationCode="KUL" />
+							<ArrivalAirport LocationCode="SIN" />
+							<OperatingAirline Code="TR" FlightNumber="2457" />
+							<Equipment AirEquipType="" />
+							<MarketingAirline Code="TR" />
+							<MarriageGrp />
+							<TPA_Extensions>
+								<eTicket Ind="True" />
+								<CabinClass CabinTypeCode="" />
+								<Meal Code="" />
+								<SeatsRemaining Number="0" BelowMin="False" />
+							</TPA_Extensions>
+						</FlightSegment>
+					</OriginDestinationOption>
+					<OriginDestinationOption>
+						<FlightSegment DepartureDateTime="2015-01-05T15:15:00" ArrivalDateTime="2015-01-05T16:20:00" StopQuantity="0" FlightNumber="2458" ResBookDesigCode="P" JourneyDuration="65">
+							<DepartureAirport LocationCode="SIN" />
+							<ArrivalAirport LocationCode="KUL" />
+							<OperatingAirline Code="TR" FlightNumber="2458" />
+							<Equipment AirEquipType="" />
+							<MarketingAirline Code="TR" />
+							<MarriageGrp />
+							<TPA_Extensions>
+								<eTicket Ind="True" />
+								<CabinClass CabinTypeCode="" />
+								<Meal Code="" />
+								<SeatsRemaining Number="0" BelowMin="False" />
+							</TPA_Extensions>
+						</FlightSegment>
+					</OriginDestinationOption>
+				</OriginDestinationOptions>
+			</AirItineraryInfo>
+			<AirItineraryPricingInfo FareSourceCode="ODAwMDA2JkZSJkZSJjdjZjgxYzIwLTk5YjAtNDUyNi04Y2EwLWM5ODIwYzc5OWQwYyZGUg==">
+				<ItinTotalFare>
+					<BaseFare Amount="263.73" CurrencyCode="MYR" DecimalPlaces="2" />
+					<EquivFare Amount="76.31" CurrencyCode="USD" DecimalPlaces="2" />
+					<TotalTax Amount="69.06" CurrencyCode="USD" DecimalPlaces="2" />
+					<TotalFare Amount="145.38" CurrencyCode="USD" DecimalPlaces="2" />
+				</ItinTotalFare>
+				<PTC_FareBreakdowns>
+					<PTC_FareBreakdown>
+						<PassengerTypeQuantity Code="ADT" Quantity="2" />
+						<FareBasisCodes>
+							<FareBasisCode>ATR2457J</FareBasisCode>
+							<FareBasisCode>ATR2458P</FareBasisCode>
+						</FareBasisCodes>
+						<PassengerFare>
+							<BaseFare Amount="118.30" CurrencyCode="MYR" DecimalPlaces="2" />
+							<EquivFare Amount="34.23" CurrencyCode="USD" DecimalPlaces="2" />
+							<Taxes>
+								<Tax Amount="34.53" CurrencyCode="USD" TaxCode="MISCTAX" DecimalPlaces="2" />
+							</Taxes>
+							<TotalFare Amount="68.76" CurrencyCode="USD" DecimalPlaces="2" />
+							<TPA_Extensions />
+						</PassengerFare>
+					</PTC_FareBreakdown>
+					<PTC_FareBreakdown>
+						<PassengerTypeQuantity Code="INF" Quantity="1" />
+						<FareBasisCodes>
+							<FareBasisCode>ITR2457J</FareBasisCode>
+							<FareBasisCode>ITR2458P</FareBasisCode>
+						</FareBasisCodes>
+						<PassengerFare>
+							<BaseFare Amount="27.12" CurrencyCode="MYR" DecimalPlaces="2" />
+							<EquivFare Amount="7.85" CurrencyCode="USD" DecimalPlaces="2" />
+							<Taxes>
+								<Tax Amount="0.00" CurrencyCode="USD" TaxCode="MISCTAX" DecimalPlaces="2" />
+							</Taxes>
+							<TotalFare Amount="7.85" CurrencyCode="USD" DecimalPlaces="2" />
+							<TPA_Extensions />
+						</PassengerFare>
+					</PTC_FareBreakdown>
+				</PTC_FareBreakdowns>
+				<FareInfos>
+					<FareInfo>
+						<FareReference>J</FareReference>
+					</FareInfo>
+					<FareInfo>
+						<FareReference>P</FareReference>
+					</FareInfo>
+				</FareInfos>
+				<FareType>WebFare</FareType>
+				<TPA_Extensions>
+					<DivideInParty Indicator="false" />
+				</TPA_Extensions>
+			</AirItineraryPricingInfo>
+			<TicketingInfo TicketType="eTicket" />
+			<TPA_Extensions>
+				<ValidatingAirline Code="TR" />
+				<Passport Ind="True" />
+				<RequiredFieldsToBook>
+					<Item Value="Passport" />
+				</RequiredFieldsToBook>
+			</TPA_Extensions>
+		</PricedItinerary>
+		<PricedItinerary SequenceNumber="9">
+			<IsCardPay>false</IsCardPay>
+			<AirItineraryInfo DirectionInd="Return">
+				<OriginDestinationOptions>
+					<OriginDestinationOption>
+						<FlightSegment DepartureDateTime="2015-01-03T08:00:00" ArrivalDateTime="2015-01-03T09:00:00" StopQuantity="0" FlightNumber="801" ResBookDesigCode="T" JourneyDuration="60">
+							<DepartureAirport LocationCode="KUL" />
+							<ArrivalAirport LocationCode="SIN" />
+							<OperatingAirline Code="OD" FlightNumber="801" />
+							<Equipment AirEquipType="" />
+							<MarketingAirline Code="OD" />
+							<MarriageGrp />
+							<TPA_Extensions>
+								<eTicket Ind="True" />
+								<CabinClass CabinTypeCode="" />
+								<Meal Code="" />
+								<SeatsRemaining Number="0" BelowMin="False" />
+							</TPA_Extensions>
+						</FlightSegment>
+					</OriginDestinationOption>
+					<OriginDestinationOption>
+						<FlightSegment DepartureDateTime="2015-01-05T19:55:00" ArrivalDateTime="2015-01-05T20:55:00" StopQuantity="0" FlightNumber="806" ResBookDesigCode="X" JourneyDuration="60">
+							<DepartureAirport LocationCode="SIN" />
+							<ArrivalAirport LocationCode="KUL" />
+							<OperatingAirline Code="OD" FlightNumber="806" />
+							<Equipment AirEquipType="" />
+							<MarketingAirline Code="OD" />
+							<MarriageGrp />
+							<TPA_Extensions>
+								<eTicket Ind="True" />
+								<CabinClass CabinTypeCode="" />
+								<Meal Code="" />
+								<SeatsRemaining Number="0" BelowMin="False" />
+							</TPA_Extensions>
+						</FlightSegment>
+					</OriginDestinationOption>
+				</OriginDestinationOptions>
+			</AirItineraryInfo>
+			<AirItineraryPricingInfo FareSourceCode="ODAwMDA5JkZSJkZSJjdjZjgxYzIwLTk5YjAtNDUyNi04Y2EwLWM5ODIwYzc5OWQwYyZGUg==">
+				<ItinTotalFare>
+					<BaseFare Amount="220.68" CurrencyCode="MYR" DecimalPlaces="2" />
+					<EquivFare Amount="63.86" CurrencyCode="USD" DecimalPlaces="2" />
+					<TotalTax Amount="102.81" CurrencyCode="USD" DecimalPlaces="2" />
+					<TotalFare Amount="166.67" CurrencyCode="USD" DecimalPlaces="2" />
+				</ItinTotalFare>
+				<PTC_FareBreakdowns>
+					<PTC_FareBreakdown>
+						<PassengerTypeQuantity Code="ADT" Quantity="2" />
+						<FareBasisCodes>
+							<FareBasisCode>AOD801T</FareBasisCode>
+							<FareBasisCode>AOD806X</FareBasisCode>
+						</FareBasisCodes>
+						<PassengerFare>
+							<BaseFare Amount="96.78" CurrencyCode="MYR" DecimalPlaces="2" />
+							<EquivFare Amount="28.00" CurrencyCode="USD" DecimalPlaces="2" />
+							<Taxes>
+								<Tax Amount="51.40" CurrencyCode="USD" TaxCode="MISCTAX" DecimalPlaces="2" />
+							</Taxes>
+							<TotalFare Amount="79.41" CurrencyCode="USD" DecimalPlaces="2" />
+							<TPA_Extensions />
+						</PassengerFare>
+					</PTC_FareBreakdown>
+					<PTC_FareBreakdown>
+						<PassengerTypeQuantity Code="INF" Quantity="1" />
+						<FareBasisCodes>
+							<FareBasisCode>IOD801T</FareBasisCode>
+							<FareBasisCode>IOD806X</FareBasisCode>
+						</FareBasisCodes>
+						<PassengerFare>
+							<BaseFare Amount="27.12" CurrencyCode="MYR" DecimalPlaces="2" />
+							<EquivFare Amount="7.85" CurrencyCode="USD" DecimalPlaces="2" />
+							<Taxes>
+								<Tax Amount="0.00" CurrencyCode="USD" TaxCode="MISCTAX" DecimalPlaces="2" />
+							</Taxes>
+							<TotalFare Amount="7.85" CurrencyCode="USD" DecimalPlaces="2" />
+							<TPA_Extensions />
+						</PassengerFare>
+					</PTC_FareBreakdown>
+				</PTC_FareBreakdowns>
+				<FareInfos>
+					<FareInfo>
+						<FareReference>T</FareReference>
+					</FareInfo>
+					<FareInfo>
+						<FareReference>X</FareReference>
+					</FareInfo>
+				</FareInfos>
+				<FareType>WebFare</FareType>
+				<TPA_Extensions>
+					<DivideInParty Indicator="false" />
+				</TPA_Extensions>
+			</AirItineraryPricingInfo>
+			<TicketingInfo TicketType="eTicket" />
+			<TPA_Extensions>
+				<ValidatingAirline Code="OD" />
+				<Passport Ind="True" />
+				<RequiredFieldsToBook>
+					<Item Value="Passport" />
+				</RequiredFieldsToBook>
+			</TPA_Extensions>
+		</PricedItinerary>
+		<PricedItinerary SequenceNumber="10">
+			<IsCardPay>false</IsCardPay>
+			<AirItineraryInfo DirectionInd="Return">
+				<OriginDestinationOptions>
+					<OriginDestinationOption>
+						<FlightSegment DepartureDateTime="2015-01-03T08:00:00" ArrivalDateTime="2015-01-03T09:00:00" StopQuantity="0" FlightNumber="801" ResBookDesigCode="T" JourneyDuration="60">
+							<DepartureAirport LocationCode="KUL" />
+							<ArrivalAirport LocationCode="SIN" />
+							<OperatingAirline Code="OD" FlightNumber="801" />
+							<Equipment AirEquipType="" />
+							<MarketingAirline Code="OD" />
+							<MarriageGrp />
+							<TPA_Extensions>
+								<eTicket Ind="True" />
+								<CabinClass CabinTypeCode="" />
+								<Meal Code="" />
+								<SeatsRemaining Number="0" BelowMin="False" />
+							</TPA_Extensions>
+						</FlightSegment>
+					</OriginDestinationOption>
+					<OriginDestinationOption>
+						<FlightSegment DepartureDateTime="2015-01-05T10:00:00" ArrivalDateTime="2015-01-05T11:00:00" StopQuantity="0" FlightNumber="802" ResBookDesigCode="X" JourneyDuration="60">
+							<DepartureAirport LocationCode="SIN" />
+							<ArrivalAirport LocationCode="KUL" />
+							<OperatingAirline Code="OD" FlightNumber="802" />
+							<Equipment AirEquipType="" />
+							<MarketingAirline Code="OD" />
+							<MarriageGrp />
+							<TPA_Extensions>
+								<eTicket Ind="True" />
+								<CabinClass CabinTypeCode="" />
+								<Meal Code="" />
+								<SeatsRemaining Number="0" BelowMin="False" />
+							</TPA_Extensions>
+						</FlightSegment>
+					</OriginDestinationOption>
+				</OriginDestinationOptions>
+			</AirItineraryInfo>
+			<AirItineraryPricingInfo FareSourceCode="ODAwMDA4JkZSJkZSJjdjZjgxYzIwLTk5YjAtNDUyNi04Y2EwLWM5ODIwYzc5OWQwYyZGUg==">
+				<ItinTotalFare>
+					<BaseFare Amount="220.68" CurrencyCode="MYR" DecimalPlaces="2" />
+					<EquivFare Amount="63.86" CurrencyCode="USD" DecimalPlaces="2" />
+					<TotalTax Amount="102.81" CurrencyCode="USD" DecimalPlaces="2" />
+					<TotalFare Amount="166.67" CurrencyCode="USD" DecimalPlaces="2" />
+				</ItinTotalFare>
+				<PTC_FareBreakdowns>
+					<PTC_FareBreakdown>
+						<PassengerTypeQuantity Code="ADT" Quantity="2" />
+						<FareBasisCodes>
+							<FareBasisCode>AOD801T</FareBasisCode>
+							<FareBasisCode>AOD802X</FareBasisCode>
+						</FareBasisCodes>
+						<PassengerFare>
+							<BaseFare Amount="96.78" CurrencyCode="MYR" DecimalPlaces="2" />
+							<EquivFare Amount="28.00" CurrencyCode="USD" DecimalPlaces="2" />
+							<Taxes>
+								<Tax Amount="51.40" CurrencyCode="USD" TaxCode="MISCTAX" DecimalPlaces="2" />
+							</Taxes>
+							<TotalFare Amount="79.41" CurrencyCode="USD" DecimalPlaces="2" />
+							<TPA_Extensions />
+						</PassengerFare>
+					</PTC_FareBreakdown>
+					<PTC_FareBreakdown>
+						<PassengerTypeQuantity Code="INF" Quantity="1" />
+						<FareBasisCodes>
+							<FareBasisCode>IOD801T</FareBasisCode>
+							<FareBasisCode>IOD802X</FareBasisCode>
+						</FareBasisCodes>
+						<PassengerFare>
+							<BaseFare Amount="27.12" CurrencyCode="MYR" DecimalPlaces="2" />
+							<EquivFare Amount="7.85" CurrencyCode="USD" DecimalPlaces="2" />
+							<Taxes>
+								<Tax Amount="0.00" CurrencyCode="USD" TaxCode="MISCTAX" DecimalPlaces="2" />
+							</Taxes>
+							<TotalFare Amount="7.85" CurrencyCode="USD" DecimalPlaces="2" />
+							<TPA_Extensions />
+						</PassengerFare>
+					</PTC_FareBreakdown>
+				</PTC_FareBreakdowns>
+				<FareInfos>
+					<FareInfo>
+						<FareReference>T</FareReference>
+					</FareInfo>
+					<FareInfo>
+						<FareReference>X</FareReference>
+					</FareInfo>
+				</FareInfos>
+				<FareType>WebFare</FareType>
+				<TPA_Extensions>
+					<DivideInParty Indicator="false" />
+				</TPA_Extensions>
+			</AirItineraryPricingInfo>
+			<TicketingInfo TicketType="eTicket" />
+			<TPA_Extensions>
+				<ValidatingAirline Code="OD" />
+				<Passport Ind="True" />
+				<RequiredFieldsToBook>
+					<Item Value="Passport" />
+				</RequiredFieldsToBook>
+			</TPA_Extensions>
+		</PricedItinerary>
+		
+	</PricedItineraries>
+</OTA_AirLowFareSearchRS>
