@@ -24,11 +24,12 @@ namespace FlightIISServices.XmlDataReader
 
             List<Entity.Flight> flightList = new List<Entity.Flight>();
 
-            Entity.Flight flight = new Entity.Flight();
+            
             foreach(var i in obj.ALT_INF)
             {
                 if (source == i.FLI_INF[0].DEP_ARP && destination == i.FLI_INF[0].ARR_ARP)
                 {
+                    Entity.Flight flight = new Entity.Flight();
                     flight.AirlineName = i.FLI_INF[0].ARL_COD;
                     flight.FlightId = i.FLI_INF[0].FLI_NUM.ToString();
                     flight.Source = i.FLI_INF[0].DEP_ARP;
@@ -36,7 +37,7 @@ namespace FlightIISServices.XmlDataReader
                     flight.DepartureTime = i.FLI_INF[0].DEP_TIM.ToString();
                     flight.ArrivalTime = i.FLI_INF[0].ARR_TIM.ToString();
                     flight.Price = (int)i.TTL_FAR * 70;
-                    //if (!flightList.Contains(flight))
+                    if (!flightList.Contains(flight))
                         flightList.Add(flight);
                 }
             }
