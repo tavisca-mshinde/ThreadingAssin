@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FlightServiceClientConsole.ClientRef {
+namespace FlightServiceClientConsole.ClientServiceReference {
     using System.Runtime.Serialization;
     using System;
     
@@ -23,7 +23,7 @@ namespace FlightServiceClientConsole.ClientRef {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlightServiceClientConsole.ClientRef.Flight[] FlightListField;
+        private FlightServiceClientConsole.ClientServiceReference.Flight[] FlightListField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MessageField;
@@ -42,7 +42,7 @@ namespace FlightServiceClientConsole.ClientRef {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlightServiceClientConsole.ClientRef.Flight[] FlightList {
+        public FlightServiceClientConsole.ClientServiceReference.Flight[] FlightList {
             get {
                 return this.FlightListField;
             }
@@ -575,30 +575,30 @@ namespace FlightServiceClientConsole.ClientRef {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ClientRef.IFlightService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ClientServiceReference.IFlightService")]
     public interface IFlightService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFlightService/GetFlightsBySourceDestinationTravellersAndClass" +
             "", ReplyAction="http://tempuri.org/IFlightService/GetFlightsBySourceDestinationTravellersAndClass" +
             "Response")]
-        FlightServiceClientConsole.ClientRef.Result GetFlightsBySourceDestinationTravellersAndClass(string source, string destination, string traveller, string flightClass);
+        FlightServiceClientConsole.ClientServiceReference.Result GetFlightsBySourceDestinationTravellersAndClass(string source, string destination, string traveller, string flightClass);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFlightService/GetFlightsBySourceDestinationTravellersAndClass" +
             "", ReplyAction="http://tempuri.org/IFlightService/GetFlightsBySourceDestinationTravellersAndClass" +
             "Response")]
-        System.Threading.Tasks.Task<FlightServiceClientConsole.ClientRef.Result> GetFlightsBySourceDestinationTravellersAndClassAsync(string source, string destination, string traveller, string flightClass);
+        System.Threading.Tasks.Task<FlightServiceClientConsole.ClientServiceReference.Result> GetFlightsBySourceDestinationTravellersAndClassAsync(string source, string destination, string traveller, string flightClass);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFlightService/FilteringFlights", ReplyAction="http://tempuri.org/IFlightService/FilteringFlightsResponse")]
-        FlightServiceClientConsole.ClientRef.Result FilteringFlights(FlightServiceClientConsole.ClientRef.Result result, FlightServiceClientConsole.ClientRef.Filter filter);
+        FlightServiceClientConsole.ClientServiceReference.Result FilteringFlights(FlightServiceClientConsole.ClientServiceReference.Result result, FlightServiceClientConsole.ClientServiceReference.Filter filter);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFlightService/FilteringFlights", ReplyAction="http://tempuri.org/IFlightService/FilteringFlightsResponse")]
-        System.Threading.Tasks.Task<FlightServiceClientConsole.ClientRef.Result> FilteringFlightsAsync(FlightServiceClientConsole.ClientRef.Result result, FlightServiceClientConsole.ClientRef.Filter filter);
+        System.Threading.Tasks.Task<FlightServiceClientConsole.ClientServiceReference.Result> FilteringFlightsAsync(FlightServiceClientConsole.ClientServiceReference.Result result, FlightServiceClientConsole.ClientServiceReference.Filter filter);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFlightService/AddNewBooking", ReplyAction="http://tempuri.org/IFlightService/AddNewBookingResponse")]
-        string AddNewBooking(FlightServiceClientConsole.ClientRef.Flight flight, FlightServiceClientConsole.ClientRef.Customer customer, int travellers);
+        string AddNewBooking(FlightServiceClientConsole.ClientServiceReference.Flight flight, FlightServiceClientConsole.ClientServiceReference.Customer customer, int travellers);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFlightService/AddNewBooking", ReplyAction="http://tempuri.org/IFlightService/AddNewBookingResponse")]
-        System.Threading.Tasks.Task<string> AddNewBookingAsync(FlightServiceClientConsole.ClientRef.Flight flight, FlightServiceClientConsole.ClientRef.Customer customer, int travellers);
+        System.Threading.Tasks.Task<string> AddNewBookingAsync(FlightServiceClientConsole.ClientServiceReference.Flight flight, FlightServiceClientConsole.ClientServiceReference.Customer customer, int travellers);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFlightService/CancelBooking", ReplyAction="http://tempuri.org/IFlightService/CancelBookingResponse")]
         string CancelBooking(string bookindId);
@@ -607,19 +607,19 @@ namespace FlightServiceClientConsole.ClientRef {
         System.Threading.Tasks.Task<string> CancelBookingAsync(string bookindId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFlightService/SaveCardDetails", ReplyAction="http://tempuri.org/IFlightService/SaveCardDetailsResponse")]
-        FlightServiceClientConsole.ClientRef.Result SaveCardDetails(FlightServiceClientConsole.ClientRef.Result result, FlightServiceClientConsole.ClientRef.Card card);
+        FlightServiceClientConsole.ClientServiceReference.Result SaveCardDetails(FlightServiceClientConsole.ClientServiceReference.Result result, FlightServiceClientConsole.ClientServiceReference.Card card);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFlightService/SaveCardDetails", ReplyAction="http://tempuri.org/IFlightService/SaveCardDetailsResponse")]
-        System.Threading.Tasks.Task<FlightServiceClientConsole.ClientRef.Result> SaveCardDetailsAsync(FlightServiceClientConsole.ClientRef.Result result, FlightServiceClientConsole.ClientRef.Card card);
+        System.Threading.Tasks.Task<FlightServiceClientConsole.ClientServiceReference.Result> SaveCardDetailsAsync(FlightServiceClientConsole.ClientServiceReference.Result result, FlightServiceClientConsole.ClientServiceReference.Card card);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IFlightServiceChannel : FlightServiceClientConsole.ClientRef.IFlightService, System.ServiceModel.IClientChannel {
+    public interface IFlightServiceChannel : FlightServiceClientConsole.ClientServiceReference.IFlightService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class FlightServiceClient : System.ServiceModel.ClientBase<FlightServiceClientConsole.ClientRef.IFlightService>, FlightServiceClientConsole.ClientRef.IFlightService {
+    public partial class FlightServiceClient : System.ServiceModel.ClientBase<FlightServiceClientConsole.ClientServiceReference.IFlightService>, FlightServiceClientConsole.ClientServiceReference.IFlightService {
         
         public FlightServiceClient() {
         }
@@ -640,27 +640,27 @@ namespace FlightServiceClientConsole.ClientRef {
                 base(binding, remoteAddress) {
         }
         
-        public FlightServiceClientConsole.ClientRef.Result GetFlightsBySourceDestinationTravellersAndClass(string source, string destination, string traveller, string flightClass) {
+        public FlightServiceClientConsole.ClientServiceReference.Result GetFlightsBySourceDestinationTravellersAndClass(string source, string destination, string traveller, string flightClass) {
             return base.Channel.GetFlightsBySourceDestinationTravellersAndClass(source, destination, traveller, flightClass);
         }
         
-        public System.Threading.Tasks.Task<FlightServiceClientConsole.ClientRef.Result> GetFlightsBySourceDestinationTravellersAndClassAsync(string source, string destination, string traveller, string flightClass) {
+        public System.Threading.Tasks.Task<FlightServiceClientConsole.ClientServiceReference.Result> GetFlightsBySourceDestinationTravellersAndClassAsync(string source, string destination, string traveller, string flightClass) {
             return base.Channel.GetFlightsBySourceDestinationTravellersAndClassAsync(source, destination, traveller, flightClass);
         }
         
-        public FlightServiceClientConsole.ClientRef.Result FilteringFlights(FlightServiceClientConsole.ClientRef.Result result, FlightServiceClientConsole.ClientRef.Filter filter) {
+        public FlightServiceClientConsole.ClientServiceReference.Result FilteringFlights(FlightServiceClientConsole.ClientServiceReference.Result result, FlightServiceClientConsole.ClientServiceReference.Filter filter) {
             return base.Channel.FilteringFlights(result, filter);
         }
         
-        public System.Threading.Tasks.Task<FlightServiceClientConsole.ClientRef.Result> FilteringFlightsAsync(FlightServiceClientConsole.ClientRef.Result result, FlightServiceClientConsole.ClientRef.Filter filter) {
+        public System.Threading.Tasks.Task<FlightServiceClientConsole.ClientServiceReference.Result> FilteringFlightsAsync(FlightServiceClientConsole.ClientServiceReference.Result result, FlightServiceClientConsole.ClientServiceReference.Filter filter) {
             return base.Channel.FilteringFlightsAsync(result, filter);
         }
         
-        public string AddNewBooking(FlightServiceClientConsole.ClientRef.Flight flight, FlightServiceClientConsole.ClientRef.Customer customer, int travellers) {
+        public string AddNewBooking(FlightServiceClientConsole.ClientServiceReference.Flight flight, FlightServiceClientConsole.ClientServiceReference.Customer customer, int travellers) {
             return base.Channel.AddNewBooking(flight, customer, travellers);
         }
         
-        public System.Threading.Tasks.Task<string> AddNewBookingAsync(FlightServiceClientConsole.ClientRef.Flight flight, FlightServiceClientConsole.ClientRef.Customer customer, int travellers) {
+        public System.Threading.Tasks.Task<string> AddNewBookingAsync(FlightServiceClientConsole.ClientServiceReference.Flight flight, FlightServiceClientConsole.ClientServiceReference.Customer customer, int travellers) {
             return base.Channel.AddNewBookingAsync(flight, customer, travellers);
         }
         
@@ -672,11 +672,11 @@ namespace FlightServiceClientConsole.ClientRef {
             return base.Channel.CancelBookingAsync(bookindId);
         }
         
-        public FlightServiceClientConsole.ClientRef.Result SaveCardDetails(FlightServiceClientConsole.ClientRef.Result result, FlightServiceClientConsole.ClientRef.Card card) {
+        public FlightServiceClientConsole.ClientServiceReference.Result SaveCardDetails(FlightServiceClientConsole.ClientServiceReference.Result result, FlightServiceClientConsole.ClientServiceReference.Card card) {
             return base.Channel.SaveCardDetails(result, card);
         }
         
-        public System.Threading.Tasks.Task<FlightServiceClientConsole.ClientRef.Result> SaveCardDetailsAsync(FlightServiceClientConsole.ClientRef.Result result, FlightServiceClientConsole.ClientRef.Card card) {
+        public System.Threading.Tasks.Task<FlightServiceClientConsole.ClientServiceReference.Result> SaveCardDetailsAsync(FlightServiceClientConsole.ClientServiceReference.Result result, FlightServiceClientConsole.ClientServiceReference.Card card) {
             return base.Channel.SaveCardDetailsAsync(result, card);
         }
     }

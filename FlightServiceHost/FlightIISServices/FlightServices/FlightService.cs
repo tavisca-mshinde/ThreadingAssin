@@ -6,6 +6,8 @@ using FlightIISServices.Entity;
 using System.Xml.Linq;
 using System.Xml;
 using System.ServiceModel;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace FlightIISServices.FlightServices
 {
@@ -13,12 +15,12 @@ namespace FlightIISServices.FlightServices
     public class FlightService : IFlightService
     {
         //string s= HttpContext.Current.Server.MapPath(@"/Data/Flights.xml");
-        string FlightXMLPath = HttpContext.Current.Server.MapPath(@"/Data/Flights.xml");          
-        string BookingDetailsXMLPath = HttpContext.Current.Server.MapPath(@"\Data\BookingDetails.xml");
-        string cardDetailsxmlPath = HttpContext.Current.Server.MapPath(@"\Data\Cards.xml");
+        //string FlightXMLPath = HttpContext.Current.Server.MapPath(@"/Data/Flights.xml");          
+        //string BookingDetailsXMLPath = HttpContext.Current.Server.MapPath(@"\Data\BookingDetails.xml");
+       // string cardDetailsxmlPath = HttpContext.Current.Server.MapPath(@"\Data\Cards.xml");
        // string FlightXMLPath = @"D:\FlightBookingSystem\FlightServiceHost\FlightIISServices\Data\Flights.xml";
-        //string BookingDetailsXMLPath = @"D:\FlightBookingSystem\FlightServiceHost\FlightIISServices\Data\BookingDetails.xml";
-        //string cardDetailsxmlPath= @"D:\FlightBookingSystem\FlightServiceHost\FlightIISServices\Data\Cards.xml";
+        string BookingDetailsXMLPath = @"D:\threadingAssignment\FlightServiceHost\FlightIISServices\Data\BookingDetails.xml";
+        string cardDetailsxmlPath= @"D:\threadingAssignment\FlightServiceHost\FlightIISServices\Data\Cards.xml";
         public Result GetFlightsBySourceDestinationTravellersAndClass(string source, string destination, string traveller, string flightClass)
         {
             Result result = new Result();
@@ -29,20 +31,57 @@ namespace FlightIISServices.FlightServices
                     throw new Exception("Enter valid number of travellers.Travellers number should be atleast 1");
                 }
 
-                List<Flight> flightList = new List<Flight>();
-
-                XDocument doc = XDocument.Load(FlightXMLPath);
-               
-                var query = from d in doc.Descendants("Flight")
-                            where d.Element("Source").Value.Equals(source) && d.Element("Destination").Value.Equals(destination) && Convert.ToInt32(d.Element("Class").Element(flightClass).Element("Available").Value) >= Convert.ToInt32(traveller)
-                            select d;
-                if(query==null)
+                //List<Flight> flightList = new List<Flight>();
+                Task<List<Entity.Flight>> task1 = Task<List<Entity.Flight>>.Factory.StartNew(() =>
                 {
+                    //Thread.Sleep(2000);
+                    return GetEnvelope(source, destination);
+                });
+
+                Task<List<Entity.Flight>> task2 = Task<List<Entity.Flight>>.Factory.StartNew(() =>
+                {
+                    return GetOTA_AirLowFareSearchRS(source, destination);
+                });
+
+
+                Task<List<Entity.Flight>> task3 = Task<List<Entity.Flight>>.Factory.StartNew(() =>
+                {
+                    return GetPSW5(source, destination);
+                });
+
+
+
+
+                var taskList = new List<Task<List<Entity.Flight>>> { task1, task2, task3 };
+
+                Task.WaitAll(taskList.ToArray(),30000);
+
+
+                List<Flight> flightList = new List<Flight>();
+                if (task1.Result != null)
+                    flightList.AddRange(task1.Result);
+                if (task2.Result != null)
+                    flightList.AddRange(task2.Result);
+                if (task3.Result != null)
+                    flightList.AddRange(task3.Result);
+                if (flightList.Count()==0)
                     throw new Exception("No result found.");
-                }
-                result.Status = true;
+                    //XDocument doc = XDocument.Load(FlightXMLPath);
+
+                    //var query = from d in doc.Descendants("Flight")
+                    //            where d.Element("Source").Value.Equals(source) && d.Element("Destination").Value.Equals(destination) && Convert.ToInt32(d.Element("Class").Element(flightClass).Element("Available").Value) >= Convert.ToInt32(traveller)
+                    //            select d;
+
+
+
+                    //if (query==null)
+                    //{
+                    //    throw new Exception("No result found.");
+                    //}
+                    //task1.
+                    result.Status = true;
                 result.Message = "Flight List retrieve successfully !";
-                result.FlightList = CreateFlightList(flightClass, flightList, query);
+                result.FlightList = flightList; //GetEnvelope(source, destination); //CreateFlightList(flightClass, query);
                 return result;
                 
             }
@@ -56,8 +95,9 @@ namespace FlightIISServices.FlightServices
             
         }
 
-        private static List<Flight> CreateFlightList(string flightClass, List<Flight> flightList, IEnumerable<XElement> query)
+        private static List<Flight> CreateFlightList(string flightClass, IEnumerable<XElement> query)
         {
+            List<Flight> flightList = new List<Flight>();
             foreach (var q in query)
             {
                 flightList.Add(new Flight
@@ -249,5 +289,25 @@ namespace FlightIISServices.FlightServices
                 return result;
             }
         }
+
+        public List<Entity.Flight> GetOTA_AirLowFareSearchRS(String source ,string destination)
+        {
+            FlightIISServices.XmlDataReader.OTA_AirLowFareSearchRSReader obj = new XmlDataReader.OTA_AirLowFareSearchRSReader();
+           
+            return obj.GetOTA_AirLowFareSearchRSData(source, destination);
+
+            //return null;
+        }
+        public List<Entity.Flight> GetEnvelope(string source,string destinstion)
+        {
+            XmlDataReader.EnvelopeReader objEnvelope = new XmlDataReader.EnvelopeReader();
+            return objEnvelope.GetEnvolopeData(source, destinstion);
+        }
+        public List<Entity.Flight> GetPSW5(string source, string destinstion)
+        {
+            XmlDataReader.PSW5Reader objPSW5 = new XmlDataReader.PSW5Reader();
+            return objPSW5.GetPSW5Data(source, destinstion);
+        }
+
     }
 }
