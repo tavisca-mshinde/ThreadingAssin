@@ -23,8 +23,8 @@ namespace FlightIISServices.XmlDataReader
             var objOTA_AirLowFareSearchRSReader = (Entity.ThreadMystifly.OTA_AirLowFareSearchRS)serializer.Deserialize(reader);
 
             List<Entity.Flight> flightList = new List<Entity.Flight>();
+            List<int> flightId = new List<int>();
 
-            
             foreach (var i in objOTA_AirLowFareSearchRSReader.PricedItineraries)
             {
                 if (source == i.AirItineraryInfo.OriginDestinationOptions[0].FlightSegment.DepartureAirport.LocationCode &&
@@ -38,8 +38,12 @@ namespace FlightIISServices.XmlDataReader
                     flight.DepartureTime = i.AirItineraryInfo.OriginDestinationOptions[0].FlightSegment.DepartureDateTime.ToString();
                     flight.ArrivalTime = i.AirItineraryInfo.OriginDestinationOptions[0].FlightSegment.ArrivalDateTime.ToString();
                     flight.Price = (int)i.AirItineraryPricingInfo.ItinTotalFare.TotalFare.Amount;
-                    if (!flightList.Contains(flight))
+
+                    if (!flightId.Contains(Convert.ToInt32(flight.FlightId)))
+                    {
+                        flightId.Add(Convert.ToInt32(flight.FlightId));
                         flightList.Add(flight);
+                    }
 
 
                 }
