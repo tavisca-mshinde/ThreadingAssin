@@ -26,7 +26,7 @@ namespace FlightIISServices.XmlDataReader
 
 
             List<Entity.Flight> flightList = new List<Entity.Flight>();
-
+            List<int> flightId = new List<int>(); 
             //Entity.Flight flight = new Entity.Flight();
             foreach (var i in objEnvolope.Body.OTA_AirLowFareSearchRS.PricedItineraries)
             {
@@ -41,8 +41,15 @@ namespace FlightIISServices.XmlDataReader
                     flight.DepartureTime = i.AirItinerary.OriginDestinationOptions.OriginDestinationOption.FlightSegment[0].DepartureDateTime.ToString();
                     flight.ArrivalTime = i.AirItinerary.OriginDestinationOptions.OriginDestinationOption.FlightSegment[0].ArrivalDateTime.ToString();
                     flight.Price = (int)i.AirItineraryPricingInfo.ItinTotalFare.TotalFare.Amount * 70;
-                    if (!flightList.Contains(flight))
+
+                    
+
+                    if (!flightId.Contains(Convert.ToInt32(flight.FlightId)))
+                    {
+                        flightId.Add(Convert.ToInt32(flight.FlightId));
                         flightList.Add(flight);
+                    }
+                        
                 }
             }
             return flightList;
