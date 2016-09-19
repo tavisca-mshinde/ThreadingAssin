@@ -24,12 +24,13 @@ namespace FlightIISServices.XmlDataReader
 
             List<Entity.Flight> flightList = new List<Entity.Flight>();
 
-            Entity.Flight flight = new Entity.Flight();
+            
             foreach (var i in objOTA_AirLowFareSearchRSReader.PricedItineraries)
             {
                 if (source == i.AirItineraryInfo.OriginDestinationOptions[0].FlightSegment.DepartureAirport.LocationCode &&
                     destination == i.AirItineraryInfo.OriginDestinationOptions[0].FlightSegment.ArrivalAirport.LocationCode)
                 {
+                    Entity.Flight flight = new Entity.Flight();
                     flight.AirlineName = i.AirItineraryInfo.OriginDestinationOptions[0].FlightSegment.OperatingAirline.Code;
                     flight.FlightId = i.AirItineraryInfo.OriginDestinationOptions[0].FlightSegment.OperatingAirline.FlightNumber.ToString();
                     flight.Source = i.AirItineraryInfo.OriginDestinationOptions[0].FlightSegment.DepartureAirport.LocationCode;
@@ -37,7 +38,7 @@ namespace FlightIISServices.XmlDataReader
                     flight.DepartureTime = i.AirItineraryInfo.OriginDestinationOptions[0].FlightSegment.DepartureDateTime.ToString();
                     flight.ArrivalTime = i.AirItineraryInfo.OriginDestinationOptions[0].FlightSegment.ArrivalDateTime.ToString();
                     flight.Price = (int)i.AirItineraryPricingInfo.ItinTotalFare.TotalFare.Amount;
-                    //if (!flightList.Contains(flight))
+                    if (!flightList.Contains(flight))
                         flightList.Add(flight);
 
 

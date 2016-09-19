@@ -27,13 +27,13 @@ namespace FlightIISServices.XmlDataReader
 
             List<Entity.Flight> flightList = new List<Entity.Flight>();
 
-            Entity.Flight flight = new Entity.Flight();
+            //Entity.Flight flight = new Entity.Flight();
             foreach (var i in objEnvolope.Body.OTA_AirLowFareSearchRS.PricedItineraries)
             {
                 if (source == i.AirItinerary.OriginDestinationOptions.OriginDestinationOption.FlightSegment[0].DepartureAirport.LocationCode
                     && destination == i.AirItinerary.OriginDestinationOptions.OriginDestinationOption.FlightSegment[0].ArrivalAirport.LocationCode)
                 {
-
+                    Entity.Flight flight = new Entity.Flight();
                     flight.AirlineName = i.AirItinerary.OriginDestinationOptions.OriginDestinationOption.FlightSegment[0].OperatingAirline.Code;
                     flight.FlightId = i.AirItinerary.OriginDestinationOptions.OriginDestinationOption.FlightSegment[0].OperatingAirline.FlightNumber.ToString();
                     flight.Source = i.AirItinerary.OriginDestinationOptions.OriginDestinationOption.FlightSegment[0].DepartureAirport.LocationCode;
@@ -41,7 +41,7 @@ namespace FlightIISServices.XmlDataReader
                     flight.DepartureTime = i.AirItinerary.OriginDestinationOptions.OriginDestinationOption.FlightSegment[0].DepartureDateTime.ToString();
                     flight.ArrivalTime = i.AirItinerary.OriginDestinationOptions.OriginDestinationOption.FlightSegment[0].ArrivalDateTime.ToString();
                     flight.Price = (int)i.AirItineraryPricingInfo.ItinTotalFare.TotalFare.Amount * 70;
-                    //if (!flightList.Contains(flight))
+                    if (!flightList.Contains(flight))
                         flightList.Add(flight);
                 }
             }
