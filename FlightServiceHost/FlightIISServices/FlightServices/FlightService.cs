@@ -17,10 +17,23 @@ namespace FlightIISServices.FlightServices
         //string s= HttpContext.Current.Server.MapPath(@"/Data/Flights.xml");
         //string FlightXMLPath = HttpContext.Current.Server.MapPath(@"/Data/Flights.xml");          
         //string BookingDetailsXMLPath = HttpContext.Current.Server.MapPath(@"\Data\BookingDetails.xml");
-        string cardDetailsxmlPath = HttpContext.Current.Server.MapPath(@"\Data\Cards.xml");
-       // string FlightXMLPath = @"D:\FlightBookingSystem\FlightServiceHost\FlightIISServices\Data\Flights.xml";
+        //string cardDetailsxmlPath = HttpContext.Current.Server.MapPath(@"\Data\Cards.xml");
+        // string FlightXMLPath = @"D:\FlightBookingSystem\FlightServiceHost\FlightIISServices\Data\Flights.xml";
         //string BookingDetailsXMLPath = @"D:\threadingAssignment\FlightServiceHost\FlightIISServices\Data\BookingDetails.xml";
         //string cardDetailsxmlPath= @"D:\threadingAssignment\FlightServiceHost\FlightIISServices\Data\Cards.xml";
+        private Task<List<Entity.Flight>> GetFlightSearchTasks(string source, string destination, Func<string, string, List<Flight>> methodToExecute)
+        {
+            var task1 = Task<List<Entity.Flight>>.Factory.StartNew(() =>
+            {
+                Random random = new Random();
+                int randomNumber = random.Next(1, 10);
+                //Task.Delay(600000);
+                Thread.Sleep(randomNumber * 1000);
+                Console.WriteLine(randomNumber);
+                return methodToExecute.Invoke(source, destination);
+            });
+            return task1;
+        }
         public Result GetFlightsBySourceDestinationTravellersAndClass(string source, string destination, string traveller, string flightClass)
         {
             Result result = new Result();
@@ -30,44 +43,51 @@ namespace FlightIISServices.FlightServices
                 {
                     throw new Exception("Enter valid number of travellers.Travellers number should be atleast 1");
                 }
-                
+
+                var taskList = new List<Task<List<Entity.Flight>>>();
+                var taskEnvelope = GetFlightSearchTasks(source, destination, GetEnvelope);
+                taskList.Add(taskEnvelope);
+                var taskOTA_AirLowFareSearchRS = GetFlightSearchTasks(source, destination, GetOTA_AirLowFareSearchRS);
+                taskList.Add(taskOTA_AirLowFareSearchRS);
+                var taskPSW5 = GetFlightSearchTasks(source, destination, GetPSW5);
+                taskList.Add(taskPSW5);
+                //var taskList = new List<Task<List<Entity.Flight>>> { task1, task2, task3 };
+
+
+                //Task<List<Entity.Flight>> task2 = Task<List<Entity.Flight>>.Factory.StartNew(() =>
+                //{
+                //    Random rnd = new Random();
+                //    int no = rnd.Next(1, 10);
+                //    //Task.Delay(600000);
+                //    Thread.Sleep(no * 1000);
+                //    Console.WriteLine(no);
+                //    return GetOTA_AirLowFareSearchRS(source, destination);
+                //});
+
                 //List<Flight> flightList = new List<Flight>();
-                Task<List<Entity.Flight>> task1 = Task<List<Entity.Flight>>.Factory.StartNew(() =>
-                {
-                    Random rnd = new Random();
-                    int no = rnd.Next(1, 10);
-                    //Task.Delay(600000);
-                    Thread.Sleep(no * 1000);
-                    Console.WriteLine(no);
-                    return GetEnvelope(source, destination);
-                });
-
-
-                Task<List<Entity.Flight>> task2 = Task<List<Entity.Flight>>.Factory.StartNew(() =>
-                {
-                    Random rnd = new Random();
-                    int no = rnd.Next(1, 10);
-                    //Task.Delay(600000);
-                    Thread.Sleep(no * 1000);
-                    Console.WriteLine(no);
-                    return GetOTA_AirLowFareSearchRS(source, destination);
-                });
-
-
-                Task<List<Entity.Flight>> task3 = Task<List<Entity.Flight>>.Factory.StartNew(() =>
-                {
-                    Random rnd = new Random();
-                    int no = rnd.Next(1, 10);
-                    //Task.Delay(60000000);
-                    Thread.Sleep(no*1000);
-                    Console.WriteLine(no);
-                    return GetPSW5(source, destination);
-                });
-                //Result r1 = Task.Run(()=> {return GetPSW5(source, destination);});
+                //Task<List<Entity.Flight>> task1 = Task<List<Entity.Flight>>.Factory.StartNew(() =>
+                //{
+                //    Random rnd = new Random();
+                //    int no = rnd.Next(1, 10);
+                //    //Task.Delay(600000);
+                //    Thread.Sleep(no * 1000);
+                //    Console.WriteLine(no);
+                //    return GetEnvelope(source, destination);
+                //});
+                //Task<List<Entity.Flight>> task3 = Task<List<Entity.Flight>>.Factory.StartNew(() =>
+                //{
+                //    Random rnd = new Random();
+                //    int no = rnd.Next(1, 10);
+                //    //Task.Delay(60000000);
+                //    Thread.Sleep(no*1000);
+                //    Console.WriteLine(no);
+                //    return GetPSW5(source, destination);
+                //});
+                ////Result r1 = Task.Run(()=> {return GetPSW5(source, destination);});
 
 
 
-                var taskList = new List<Task<List<Entity.Flight>>> { task1, task2, task3 };
+
 
                 Task.WaitAll(taskList.ToArray(),5000);
 
@@ -117,28 +137,28 @@ namespace FlightIISServices.FlightServices
             
         }
 
-        private static List<Flight> CreateFlightList(string flightClass, IEnumerable<XElement> query)
-        {
-            List<Flight> flightList = new List<Flight>();
-            foreach (var q in query)
-            {
-                flightList.Add(new Flight
-                {
-                    FlightId = q.Element("Id").Value,
+        //private static List<Flight> CreateFlightList(string flightClass, IEnumerable<XElement> query)
+        //{
+        //    List<Flight> flightList = new List<Flight>();
+        //    foreach (var q in query)
+        //    {
+        //        flightList.Add(new Flight
+        //        {
+        //            FlightId = q.Element("Id").Value,
 
-                    Source = q.Element("Source").Value,
-                    Destination = q.Element("Destination").Value,
-                    AirlineName = q.Element("AirlineName").Value,
-                    FlightClass = flightClass,
-                    DepartureTime = q.Element("DepartureTime").Value,
-                    ArrivalTime = q.Element("ArrivalTime").Value,
-                    Price = Convert.ToInt32(q.Element("Class").Element(flightClass).Element("Price").Value),
-                    Rating=Convert.ToDouble(q.Element("Rating").Value),
-                    AvailableSeat = Convert.ToInt32(q.Element("Class").Element(flightClass).Element("Available").Value)
-                });
-            }
-            return flightList;
-        }
+        //            Source = q.Element("Source").Value,
+        //            Destination = q.Element("Destination").Value,
+        //            AirlineName = q.Element("AirlineName").Value,
+        //            FlightClass = flightClass,
+        //            DepartureTime = q.Element("DepartureTime").Value,
+        //            ArrivalTime = q.Element("ArrivalTime").Value,
+        //            Price = Convert.ToInt32(q.Element("Class").Element(flightClass).Element("Price").Value),
+        //            Rating=Convert.ToDouble(q.Element("Rating").Value),
+        //            AvailableSeat = Convert.ToInt32(q.Element("Class").Element(flightClass).Element("Available").Value)
+        //        });
+        //    }
+        //    return flightList;
+        //}
 
         
 
@@ -263,6 +283,7 @@ namespace FlightIISServices.FlightServices
         public Result SaveCardDetails(Result result, Card card)
         {
             string cardDetailsxmlPath = HttpContext.Current.Server.MapPath(@"\Data\Cards.xml");
+
             try
             {
                 if (!Validations.Validator.ValidateCardNumber(card.CardNumber))
@@ -280,6 +301,7 @@ namespace FlightIISServices.FlightServices
                 else
                 {
                     XmlDocument document = new XmlDocument();
+                    
                     document.Load(cardDetailsxmlPath);
                     XmlNode newCard = document.CreateElement("Card");
                     document.DocumentElement.AppendChild(newCard);
@@ -317,21 +339,21 @@ namespace FlightIISServices.FlightServices
 
         public List<Entity.Flight> GetOTA_AirLowFareSearchRS(String source ,string destination)
         {
-            FlightIISServices.XmlDataReader.OTA_AirLowFareSearchRSReader obj = new XmlDataReader.OTA_AirLowFareSearchRSReader();
+            FlightIISServices.XmlDataReader.IXmlFileReader obj = new XmlDataReader.OTA_AirLowFareSearchRSReader();
            
-            return obj.GetOTA_AirLowFareSearchRSData(source, destination);
+            return obj.GetData(source, destination);
 
             //return null;
         }
         public List<Entity.Flight> GetEnvelope(string source,string destinstion)
         {
-            XmlDataReader.EnvelopeReader objEnvelope = new XmlDataReader.EnvelopeReader();
-            return objEnvelope.GetEnvolopeData(source, destinstion);
+            XmlDataReader.IXmlFileReader objEnvelope = new XmlDataReader.EnvelopeReader();
+            return objEnvelope.GetData(source, destinstion);
         }
         public List<Entity.Flight> GetPSW5(string source, string destinstion)
         {
-            XmlDataReader.PSW5Reader objPSW5 = new XmlDataReader.PSW5Reader();
-            return objPSW5.GetPSW5Data(source, destinstion);
+            XmlDataReader.IXmlFileReader objPSW5 = new XmlDataReader.PSW5Reader();
+            return objPSW5.GetData(source, destinstion);
         }
 
     }

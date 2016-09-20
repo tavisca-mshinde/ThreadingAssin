@@ -8,9 +8,9 @@ using System.Xml.Serialization;
 
 namespace FlightIISServices.XmlDataReader
 {
-    public class PSW5Reader
+    public class PSW5Reader:IXmlFileReader
     {
-        public List<Entity.Flight> GetPSW5Data(string source, string destination)
+        public List<Entity.Flight> GetData(string source, string destination)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(Entity.Threadworldspan.PSW5));
 

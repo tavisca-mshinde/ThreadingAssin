@@ -101,24 +101,24 @@ namespace FlightIIsServiceTest
         [TestMethod]
         public void TestXmlDataReaderEnvelopeReader()
         {
-            FlightIISServices.XmlDataReader.EnvelopeReader en = new FlightIISServices.XmlDataReader.EnvelopeReader();
-            var a = en.GetEnvolopeData("MAA", "DEL");
+            FlightIISServices.XmlDataReader.IXmlFileReader en = new FlightIISServices.XmlDataReader.EnvelopeReader();
+            var a = en.GetData("MAA", "DEL");
             Assert.IsNotNull(a);
         }
 
         [TestMethod]
         public void TestXmlDataReaderOTA_AirLowFareSearchRSReader()
         {
-            FlightIISServices.XmlDataReader.OTA_AirLowFareSearchRSReader en = new FlightIISServices.XmlDataReader.OTA_AirLowFareSearchRSReader();
-            var a = en.GetOTA_AirLowFareSearchRSData("KUL", "SIN");
+            FlightIISServices.XmlDataReader.IXmlFileReader en = new FlightIISServices.XmlDataReader.OTA_AirLowFareSearchRSReader();
+            var a = en.GetData("KUL", "SIN");
             Assert.IsNotNull(a);
         }
 
         [TestMethod]
         public void TestXmlDataReaderPSW5Reader()
         {
-            FlightIISServices.XmlDataReader.PSW5Reader en = new FlightIISServices.XmlDataReader.PSW5Reader();
-            var a = en.GetPSW5Data("LAS", "LAX");
+            FlightIISServices.XmlDataReader.IXmlFileReader en = new FlightIISServices.XmlDataReader.PSW5Reader();
+            var a = en.GetData("LAS", "LAX");
             Assert.IsNotNull(a);
         }
     }

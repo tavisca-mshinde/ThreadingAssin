@@ -8,9 +8,9 @@ using System.Xml.Serialization;
 
 namespace FlightIISServices.XmlDataReader
 {
-    public class OTA_AirLowFareSearchRSReader
+    public class OTA_AirLowFareSearchRSReader: IXmlFileReader
     {
-        public List<Entity.Flight> GetOTA_AirLowFareSearchRSData(string source, string destination)
+        public List<Entity.Flight> GetData(string source, string destination)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(Entity.ThreadMystifly.OTA_AirLowFareSearchRS));
 
