@@ -64,6 +64,9 @@
   <ItemGroup>
     <Content Include="Data\BookingDetails.xml" />
     <Content Include="Data\Cards.xml" />
+    <None Include="Data\mystifly.xml" />
+    <None Include="Data\sabre.xml" />
+    <None Include="Data\worldspan.xml" />
     <Content Include="ReferenceFiles\Customer.xml" />
     <Content Include="Data\Flights.xml" />
     <Content Include="Service1.svc" />
@@ -78,10 +81,6 @@
     <Compile Include="FlightServices\FilterFlights.cs" />
     <Compile Include="FlightServices\FlightService.cs" />
     <Compile Include="FlightServices\IFlightService.cs" />
-    <Compile Include="Service1.svc.cs">
-      <DependentUpon>Service1.svc</DependentUpon>
-    </Compile>
-    <Compile Include="IService1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entity\ThreadMystifly\OTA_AirLowFareSearchRS.cs" />
     <Compile Include="Entity\ThreadSabre\Envelope.cs" />
@@ -90,6 +89,7 @@
     <Compile Include="XmlDataReader\EnvelopeReader.cs" />
     <Compile Include="XmlDataReader\OTA_AirLowFareSearchRSReader.cs" />
     <Compile Include="XmlDataReader\PSW5Reader.cs" />
+    <Compile Include="XmlDataReader\IXmlFileReader.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

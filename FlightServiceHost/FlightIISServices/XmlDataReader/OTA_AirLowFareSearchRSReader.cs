@@ -8,14 +8,15 @@ using System.Xml.Serialization;
 
 namespace FlightIISServices.XmlDataReader
 {
-    public class OTA_AirLowFareSearchRSReader
+    public class OTA_AirLowFareSearchRSReader: IXmlFileReader
     {
-        public List<Entity.Flight> GetOTA_AirLowFareSearchRSData(string source, string destination)
+        public List<Entity.Flight> GetData(string source, string destination)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(Entity.ThreadMystifly.OTA_AirLowFareSearchRS));
 
-            string path = @"D:\threadingAssignment\FlightServiceHost\FlightIISServices\Data\mystifly.xml";
-
+            //string path = @"D:\threadingAssignment\FlightServiceHost\FlightIISServices\Data\mystifly.xml";
+            //string path = @"Data/mystifly.xml";
+            var path = System.Web.Hosting.HostingEnvironment.MapPath("~/Data/mystifly.xml");
             // FileStream fileStream = new FileStream(path, FileMode.Open);
 
             //XmlReader reader = XmlReader.Create(fileStream);

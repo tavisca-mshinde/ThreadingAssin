@@ -8,15 +8,16 @@ using System.Xml.Serialization;
 
 namespace FlightIISServices.XmlDataReader
 {
-    public class PSW5Reader
+    public class PSW5Reader:IXmlFileReader
     {
-        public List<Entity.Flight> GetPSW5Data(string source, string destination)
+        public List<Entity.Flight> GetData(string source, string destination)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(Entity.Threadworldspan.PSW5));
 
-            string path = @"D:\threadingAssignment\FlightServiceHost\FlightIISServices\Data\worldspan.xml";
-
+            //string path = @"D:\threadingAssignment\FlightServiceHost\FlightIISServices\Data\worldspan.xml";
+            //string path = @"Data/worldspan.xml";
             //FileStream fs = new FileStream(s, FileMode.Open);
+            var path = System.Web.Hosting.HostingEnvironment.MapPath("~/Data/worldspan.xml");
 
             //XmlReader reader = XmlReader.Create(fs);
             StreamReader reader = new StreamReader(path);

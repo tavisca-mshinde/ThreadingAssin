@@ -8,17 +8,20 @@ using System.Xml.Serialization;
 
 namespace FlightIISServices.XmlDataReader
 {
-    public class EnvelopeReader
+    public class EnvelopeReader: IXmlFileReader
     {
-        public List<Entity.Flight> GetEnvolopeData (string source,string destination)
+        public List<Entity.Flight> GetData (string source,string destination)
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(Entity.ThreadSabre.Envelope));
 
-            string path = @"D:\threadingAssignment\FlightServiceHost\FlightIISServices\Data\sabre.xml";
+            //string path = @"D:\threadingAssignment\FlightServiceHost\FlightIISServices\Data\sabre.xml";
+            //string path = @"~/Data/sabre.xml";
 
             //FileStream fileStream = new FileStream(path, FileMode.Open);
-
             //XmlReader reader = XmlReader.Create(fileStream);
+
+            var path = System.Web.Hosting.HostingEnvironment.MapPath("~/Data/sabre.xml");
+            
             StreamReader reader = new StreamReader(path);
             var objEnvolope = (Entity.ThreadSabre.Envelope)xmlSerializer.Deserialize(reader);
 
